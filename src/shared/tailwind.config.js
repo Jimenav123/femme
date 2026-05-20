@@ -73,7 +73,9 @@ tailwind.config = {
                 "unit":           "8px",
             },
             fontFamily: {
+                "display-xl":         ["Libre Caslon Text", "Georgia", "serif"],
                 "display-lg":         ["Libre Caslon Text", "Georgia", "serif"],
+                "display-md":         ["Libre Caslon Text", "Georgia", "serif"],
                 "headline-lg":        ["Libre Caslon Text", "Georgia", "serif"],
                 "headline-lg-mobile": ["Libre Caslon Text", "Georgia", "serif"],
                 "headline-md":        ["Libre Caslon Text", "Georgia", "serif"],
@@ -83,7 +85,9 @@ tailwind.config = {
                 "label-sm":           ["DM Sans", "system-ui", "sans-serif"],
             },
             fontSize: {
+                "display-xl":         ["72px", { lineHeight: "1.0", letterSpacing: "-0.03em", fontWeight: "400" }],
                 "display-lg":         ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400" }],
+                "display-md":         ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400" }],
                 "headline-lg":        ["40px", { lineHeight: "1.2", fontWeight: "400" }],
                 "headline-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "400" }],
                 "headline-md":        ["24px", { lineHeight: "1.3", fontWeight: "400" }],
@@ -91,6 +95,7 @@ tailwind.config = {
                 "body-md":            ["16px", { lineHeight: "1.6", fontWeight: "400" }],
                 "label-md":           ["14px", { lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "500" }],
                 "label-sm":           ["12px", { lineHeight: "1.4", letterSpacing: "0.08em", fontWeight: "700" }],
+                "label-xs":           ["10px", { lineHeight: "1.3", letterSpacing: "0.10em", fontWeight: "700" }],
             },
         },
     },
