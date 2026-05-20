@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>4. My Plan / Rituals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fc836a",
+                        "on-tertiary-fixed-variant": "#484743",
+                        "tertiary-container": "#2b2a27",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4f3f1",
+                        "secondary-fixed": "#ffdad3",
+                        "primary-fixed": "#e8e1db",
+                        "outline-variant": "#cdc5bc",
+                        "on-surface": "#1a1c1b",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#4b463f",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-primary-container": "#96918b",
+                        "tertiary": "#161613",
+                        "primary-container": "#2d2a26",
+                        "tertiary-fixed": "#e6e2dd",
+                        "surface-container": "#efeeec",
+                        "on-primary-fixed": "#1e1b17",
+                        "error": "#ba1a1a",
+                        "background": "#faf9f7",
+                        "on-primary-fixed-variant": "#4a4642",
+                        "on-tertiary-container": "#93918d",
+                        "tertiary-fixed-dim": "#c9c6c1",
+                        "surface-container-high": "#e9e8e6",
+                        "on-secondary-container": "#721c0c",
+                        "surface-tint": "#625e59",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#a13e2b",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-secondary-fixed": "#3e0400",
+                        "secondary-fixed-dim": "#ffb4a5",
+                        "surface-bright": "#faf9f7",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1c1b",
+                        "on-error-container": "#93000a",
+                        "primary": "#181612",
+                        "on-secondary-fixed-variant": "#812716",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1ef",
+                        "surface-dim": "#dadad8",
+                        "surface-variant": "#e3e2e0",
+                        "primary-fixed-dim": "#ccc5bf",
+                        "inverse-surface": "#2f3130",
+                        "on-secondary": "#ffffff",
+                        "surface": "#faf9f7",
+                        "outline": "#7c766e",
+                        "inverse-primary": "#ccc5bf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-desktop": "48px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-md": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "label-sm": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "headline-lg-mobile": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: minmax(100px, auto);
+            gap: 16px;
+        }
+        .custom-checkbox:checked {
+            background-color: #a13e2b; /* secondary/terracotta */
+            border-color: #a13e2b;
+        }
+        .custom-checkbox {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #cdc5bc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .custom-checkbox:checked::after {
+            content: 'check';
+            font-family: 'Material Symbols Outlined';
+            font-size: 16px;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .custom-checkbox:active {
+            transform: scale(0.9);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar from JSON -->
+<header class="w-full top-0 sticky bg-background z-50">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto bg-background">
+<span class="material-symbols-outlined text-primary dark:text-on-background hover:opacity-70 transition-opacity cursor-pointer">waves</span>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-on-background uppercase tracking-widest">4. My Plan / Rituals</h1>
+<span class="material-symbols-outlined text-primary dark:text-on-background hover:opacity-70 transition-opacity cursor-pointer">account_circle</span>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-12">
+<!-- Hero Section -->
+<section class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden mt-6">
+<img alt="Rituals Hero" class="w-full h-full object-cover" data-alt="A serene, high-end wellness scene with soft sunlight filtering through sheer linen curtains onto a minimalist yoga mat and a ceramic bowl of fresh fruit. The aesthetic is editorial and calm, featuring a sophisticated palette of warm neutrals, cream, and subtle terracotta accents. The lighting is diffused and airy, creating an atmosphere of intentionality and quiet luxury typical of a premium lifestyle journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6IKPw1qyiqHGIa0UAkTtMqgQvpWHqGS_HUlND2tcLekkwD2Av4JisJUJRXyad5ncpeDYeWTK93Y9SX9bP0ZcQjO_xERRB8qFArxtCcGIpATHoFeQS-dJIYEY8vHYaozCmKhLMbGpB8OwND6UHV4rMDuN7673M4QnecvmcogdxBsnAivLoWLrVOig7VqoTDjVnuMkbJrfBnSV1_MtXegCsJScOgYY1LTYfD0JKsYImSi-xPoITm90wdJrVYmnNdJgDpUC6ykGFmytm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+<p class="font-label-sm text-label-sm text-white/90 uppercase tracking-widest mb-2">Phase 03 of 04</p>
+<h2 class="font-headline-lg text-headline-lg text-white">Luteal Phase</h2>
+<p class="font-body-md text-body-md text-white/80 max-w-md">The time for grounding, warming foods, and restorative movement. Listen to the inner shift.</p>
+</div>
+</section>
+<!-- Phase Rituals Masonry-style Bento -->
+<section class="space-y-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md text-primary italic">Daily Rituals</h3>
+<p class="text-on-surface-variant font-label-md">Tailored to your current hormonal profile.</p>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container rounded-full px-4 py-2 text-label-sm font-label-sm text-secondary uppercase cursor-pointer hover:bg-surface-container-high transition-colors">Today</span>
+<span class="bg-surface-container-low rounded-full px-4 py-2 text-label-sm font-label-sm text-on-surface-variant uppercase cursor-pointer hover:bg-surface-container-high transition-colors">Plan</span>
+</div>
+</div>
+<!-- Bento Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Nutrition Card -->
+<div class="md:col-span-8 bg-surface-container-low rounded-lg p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<h4 class="font-headline-md text-headline-md">Nutrition</h4>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Phase-Locked</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-background rounded-full border border-transparent hover:border-secondary/20 transition-all group cursor-pointer">
+<div class="flex items-center gap-4">
+<input class="custom-checkbox" type="checkbox"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Complex Carbohydrates</p>
+<p class="text-[11px] text-on-surface-variant uppercase tracking-wider">Sweet Potatoes &amp; Quinoa</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-background rounded-full border border-transparent hover:border-secondary/20 transition-all group cursor-pointer">
+<div class="flex items-center gap-4">
+<input class="custom-checkbox" type="checkbox"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Magnesium-Rich Snacks</p>
+<p class="text-[11px] text-on-surface-variant uppercase tracking-wider">Dark Chocolate &amp; Almonds</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-background rounded-full border border-transparent hover:border-secondary/20 transition-all group cursor-pointer">
+<div class="flex items-center gap-4">
+<input class="custom-checkbox" type="checkbox"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Hydration Ritual</p>
+<p class="text-[11px] text-on-surface-variant uppercase tracking-wider">2L with Electrolytes</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Training Summary Card -->
+<div class="md:col-span-4 bg-primary-container text-white rounded-lg p-8 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Training</h4>
+<p class="text-white/60 font-body-md mb-8">Intensity should be low to moderate as progesterone rises.</p>
+</div>
+<div class="space-y-4">
+<div class="p-6 rounded-lg bg-white/5 border border-white/10 text-center">
+<p class="text-[10px] uppercase tracking-[0.2em] mb-1 opacity-60">Today's Focus</p>
+<p class="font-headline-md italic">Slow Flow Yoga</p>
+</div>
+<button class="w-full bg-white text-primary rounded-full py-4 font-label-md hover:bg-surface-container transition-colors">Start Session</button>
+</div>
+</div>
+<!-- Supplements Vertical Card -->
+<div class="md:col-span-4 bg-surface-container rounded-lg p-8 space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">pill</span>
+</div>
+<h4 class="font-headline-md text-headline-md">Supplements</h4>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<input class="custom-checkbox mt-1" type="checkbox"/>
+<div>
+<p class="font-label-md text-label-md">Zinc &amp; B6</p>
+<p class="text-xs text-on-surface-variant">Supports progesterone production.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<input class="custom-checkbox mt-1" type="checkbox"/>
+<div>
+<p class="font-label-md text-label-md">Evening Primrose</p>
+<p class="text-xs text-on-surface-variant">Ease hormonal transitions.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Recovery Card (Horizontal) -->
+<div class="md:col-span-8 bg-surface-container rounded-lg p-8 flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/3 aspect-square rounded-lg overflow-hidden shrink-0">
+<img alt="Recovery" class="w-full h-full object-cover" data-alt="A high-contrast editorial photograph of a minimalist ceramic incense burner with a thin plume of smoke rising against a soft beige wall. Beside it sits a stack of neutral-toned books. The aesthetic is deeply tranquil, emphasizing clean lines, tonal textures of linen and stone, and a serene, morning light atmosphere that feels premium and intentional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC55V7OY-DPfLZ89iuvX9jLnDUhRgMPEiHjZSSAehBYbYBvZC36e4g3SRSqYTmiFfJe3f7IOvkCMoqqpkUJiGCocY3VTM77pZQ2atWprhDHRscEvy96LKqoUZmnTzFb-JSU5FpH860rT4pEfrBomaGeaCpgRhoReDRutFGXAcavSwGrPw1lc6RX7RXN3G73iZXfnoYcHZ5qREN80XJaKqElNoSZ9MuagCXzt09HJikAtpBRXzPsoLqdYDIQ76RN5YYKTuYAfkNPL_Wd"/>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline-md text-headline-md">Recovery Ritual</h4>
+<p class="font-body-md text-on-surface-variant">A 15-minute guided meditation focusing on cyclic awareness and gratitude for the body's natural rhythm.</p>
+<div class="flex items-center gap-4 pt-2">
+<input class="custom-checkbox" type="checkbox"/>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Mark Complete</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Progress Insight -->
+<section class="bg-surface-container-high rounded-lg p-8 md:p-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h3 class="font-headline-lg text-headline-lg italic">Cycle Sync Insight</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your energy levels are expected to dip today. It's not a setback; it's a phase. Focus on high-quality sleep and magnesium intake to mitigate PMS symptoms before they arrive.</p>
+<div class="pt-4 border-t border-outline-variant flex gap-8">
+<div>
+<p class="font-headline-md text-headline-md text-secondary">84%</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Plan Adherence</p>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-secondary">High</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant">Bio-Readiness</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="w-full aspect-square border-2 border-dashed border-outline-variant rounded-full flex items-center justify-center p-8">
+<div class="w-full h-full rounded-full bg-secondary-container/10 flex items-center justify-center animate-pulse">
+<div class="text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-2">auto_awesome</span>
+<p class="font-label-md text-label-md text-primary">In Rhythm</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4">
+<div class="bg-surface-container-low/90 backdrop-blur-md w-[90%] md:max-w-md rounded-full flex justify-around items-center py-2 px-2"><a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-secondary transition-colors group" href="#"><span class="material-symbols-outlined">dashboard</span><span class="font-label-sm text-label-sm mt-1">Briefing</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-secondary transition-colors group" href="#"><span class="material-symbols-outlined">auto_awesome</span><span class="font-label-sm text-label-sm mt-1">Today</span></a><a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-6 py-2 scale-100 transition-all duration-300" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">self_care</span><span class="font-label-sm text-label-sm mt-1">Rituals</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-secondary transition-colors group" href="#"><span class="material-symbols-outlined">analytics</span><span class="font-label-sm text-label-sm mt-1">Progress</span></a></div>
+</nav>
+<script>
+        // Micro-interactions for checkboxes
+        document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const label = this.closest('.flex')?.querySelector('.font-label-md');
+                if (this.checked) {
+                    label?.classList.add('line-through', 'opacity-50');
+                } else {
+                    label?.classList.remove('line-through', 'opacity-50');
+                }
+            });
+        });
+
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bg-surface-container, .bg-surface-container-low, .bg-primary-container').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

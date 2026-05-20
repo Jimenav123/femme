@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>5. AI Protocol</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f1f1ef",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#93918d",
+                        "primary-fixed": "#e8e1db",
+                        "surface-container-high": "#e9e8e6",
+                        "error": "#ba1a1a",
+                        "tertiary": "#161613",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#812716",
+                        "surface-tint": "#625e59",
+                        "background": "#faf9f7",
+                        "inverse-surface": "#2f3130",
+                        "inverse-primary": "#ccc5bf",
+                        "surface-dim": "#dadad8",
+                        "tertiary-fixed": "#e6e2dd",
+                        "on-primary-container": "#96918b",
+                        "primary-fixed-dim": "#ccc5bf",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-background": "#1a1c1b",
+                        "on-secondary-fixed": "#3e0400",
+                        "on-primary-fixed": "#1e1b17",
+                        "on-primary": "#ffffff",
+                        "secondary": "#a13e2b",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c9c6c1",
+                        "on-surface": "#1a1c1b",
+                        "surface": "#faf9f7",
+                        "on-surface-variant": "#4b463f",
+                        "on-tertiary-fixed-variant": "#484743",
+                        "primary-container": "#2d2a26",
+                        "on-secondary-container": "#721c0c",
+                        "secondary-fixed-dim": "#ffb4a5",
+                        "surface-bright": "#faf9f7",
+                        "primary": "#181612",
+                        "surface-container": "#efeeec",
+                        "surface-container-low": "#f4f3f1",
+                        "on-primary-fixed-variant": "#4a4642",
+                        "tertiary-container": "#2b2a27",
+                        "secondary-container": "#fc836a",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#cdc5bc",
+                        "outline": "#7c766e",
+                        "secondary-fixed": "#ffdad3",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e3e2e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Libre Caslon Text"],
+                        "body-md": ["DM Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "label-sm": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #7c766e;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .custom-checkbox:checked {
+            background-color: #a13e2b;
+            border-color: #a13e2b;
+        }
+        .custom-checkbox:checked::after {
+            content: 'check';
+            font-family: 'Material Symbols Outlined';
+            color: white;
+            font-size: 16px;
+        }
+        .custom-checkbox:active {
+            transform: scale(0.9);
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        @media (max-width: 768px) {
+            .masonry-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky bg-background z-50">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto">
+<button class="text-primary hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="waves">waves</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary uppercase tracking-widest">FĒMME</h1>
+<button class="text-primary hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Header Section -->
+<div class="relative flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block">Current Cycle Phase: Luteal</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-container">5. AI Protocol</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 opacity-80 leading-relaxed">
+                    Prioritize anti-inflammatory nutrients and steady-state movement to support progesterone production and metabolic shifts during this phase.
+                </p>
+</div>
+<!-- Completion Badge -->
+<div class="md:absolute top-0 right-0 flex flex-col items-end">
+<div class="bg-surface-container-low rounded-full px-6 py-6 border border-outline-variant/30 flex items-center justify-center min-w-[120px] transition-all duration-500" id="completion-container">
+<div class="text-center">
+<span class="font-headline-md text-headline-md text-secondary block" id="completion-percentage">0%</span>
+<span class="font-label-sm text-label-sm text-outline uppercase">Complete</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Protocol List Sections -->
+<div class="space-y-16">
+<!-- Section: Supplementation -->
+<section>
+<div class="flex items-center gap-4 mb-8 border-b border-surface-container pb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="pill">pill</span>
+<h3 class="font-headline-md text-headline-md text-primary">Supplementation</h3>
+</div>
+<div class="flex flex-col">
+<div class="protocol-item flex items-center justify-between py-6 border-b border-surface-container group hover:bg-surface-container-low/30 px-2 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-body-lg text-body-lg text-primary">Magnesium Bisglycinate</span>
+<span class="font-label-md text-label-md text-on-surface-variant">400mg - PM for relaxation and sleep support</span>
+</div>
+<input aria-label="Magnesium Bisglycinate" class="custom-checkbox protocol-cb" type="checkbox"/>
+</div>
+<div class="protocol-item flex items-center justify-between py-6 border-b border-surface-container group hover:bg-surface-container-low/30 px-2 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-body-lg text-body-lg text-primary">Vitamin B6 + Zinc</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Morning - Supports neurotransmitter balance</span>
+</div>
+<input aria-label="Vitamin B6 + Zinc" class="custom-checkbox protocol-cb" type="checkbox"/>
+</div>
+<div class="protocol-item flex items-center justify-between py-6 border-b border-surface-container group hover:bg-surface-container-low/30 px-2 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-body-lg text-body-lg text-primary">Vitex (Chasteberry)</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Morning - For progesterone modulation</span>
+</div>
+<input aria-label="Vitex" class="custom-checkbox protocol-cb" type="checkbox"/>
+</div>
+</div>
+</section>
+<!-- Section: Movement -->
+<section>
+<div class="flex items-center gap-4 mb-8 border-b border-surface-container pb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="directions_run">directions_run</span>
+<h3 class="font-headline-md text-headline-md text-primary">Movement</h3>
+</div>
+<div class="flex flex-col">
+<div class="protocol-item flex items-center justify-between py-6 border-b border-surface-container group hover:bg-surface-container-low/30 px-2 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-body-lg text-body-lg text-primary">Morning Grounding Walk</span>
+<span class="font-label-md text-label-md text-on-surface-variant">20 mins - Low intensity to manage cortisol</span>
+</div>
+<input aria-label="Grounding Walk" class="custom-checkbox protocol-cb" type="checkbox"/>
+</div>
+<div class="protocol-item flex items-center justify-between py-6 border-b border-surface-container group hover:bg-surface-container-low/30 px-2 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-body-lg text-body-lg text-primary">Strength Training (Low Reps)</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Functional movements, prioritizing stability</span>
+</div>
+<input aria-label="Strength Training" class="custom-checkbox protocol-cb" type="checkbox"/>
+</div>
+</div>
+</section>
+<!-- Section: Nutrition -->
+<section>
+<div class="flex items-center gap-4 mb-8 border-b border-surface-container pb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="restaurant">restaurant</span>
+<h3 class="font-headline-md text-headline-md text-primary">Nutrition</h3>
+</div>
+<div class="flex flex-col">
+<div class="protocol-item flex items-center justify-between py-6 border-b border-surface-container group hover:bg-surface-container-low/30 px-2 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-body-lg text-body-lg text-primary">Cruciferous Vegetable Intake</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Broccoli, Kale, Cabbage to aid estrogen detox</span>
+</div>
+<input aria-label="Cruciferous Veg" class="custom-checkbox protocol-cb" type="checkbox"/>
+</div>
+<div class="protocol-item flex items-center justify-between py-6 border-b border-surface-container group hover:bg-surface-container-low/30 px-2 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-body-lg text-body-lg text-primary">Complex Carb Refeed</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Sweet potatoes or Quinoa to support serotonin</span>
+</div>
+<input aria-label="Complex Carbs" class="custom-checkbox protocol-cb" type="checkbox"/>
+</div>
+<div class="protocol-item flex items-center justify-between py-6 border-b border-surface-container group hover:bg-surface-container-low/30 px-2 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="font-body-lg text-body-lg text-primary">Seed Cycling (Sesame &amp; Sunflower)</span>
+<span class="font-label-md text-label-md text-on-surface-variant">1 tbsp each daily for essential fatty acids</span>
+</div>
+<input aria-label="Seed Cycling" class="custom-checkbox protocol-cb" type="checkbox"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Atmospheric Image Context -->
+<div class="mt-24 rounded-lg overflow-hidden relative aspect-video md:aspect-[21/9]">
+<img alt="Zen space" class="w-full h-full object-cover" data-alt="A serene and minimalist interior space designed for wellness and contemplation. Large windows allow soft, diffused afternoon sunlight to pour across a clean, sand-toned floor. The color palette consists of warm neutrals, soft off-whites, and subtle terracotta accents. A single artisanal ceramic vase sits on a low platform, surrounded by a peaceful, high-end editorial atmosphere that evokes intentionality and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-P5WPPoA2Zy-Q4-Bm-vRoVWaHFuZ3Ju2VvhrRuAcecuXN575aYyh2zPHIo8HOSpGuDmArVTk8wNNUFJjZFY5kHwp3uYtk5R5g-FgYMja1KR5OrsDYMx4U4fmKIkdMnPQBze1TId-Wo4I9VzdSTrqrqXFmvHtICXnNEOG15c81uzRqCjQ2wq8HmpEnVuiI_V3mKFNIrbYkYTIoMCiIg5gEH0f_XccBvX1l_zLhgpqARA_qOSkrFHEPmgkDfpI9E7JcSPI9ikZ59hSl"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center text-center p-8">
+<div class="max-w-md">
+<p class="font-headline-md text-headline-md text-on-primary">"The luteal phase is a time for interior focus and grounding."</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4">
+<div class="bg-surface-container-low/90 backdrop-blur-md rounded-full flex justify-between items-center w-full max-w-md px-6 py-2">
+<!-- The Briefing -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">The Briefing</span>
+</button>
+<!-- Today (ACTIVE) -->
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-6 py-2 active:scale-90 transition-all duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Today</span>
+</button>
+<!-- Rituals -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="self_care">self_care</span>
+<span class="font-label-sm text-label-sm">Rituals</span>
+</button>
+<!-- Progress -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90 duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-label-sm">Progress</span>
+</button>
+</div>
+</nav>
+<script>
+        const checkboxes = document.querySelectorAll('.protocol-cb');
+        const percentageDisplay = document.getElementById('completion-percentage');
+        const badgeContainer = document.getElementById('completion-container');
+
+        function updateCompletion() {
+            const total = checkboxes.length;
+            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            percentageDisplay.innerText = `${percentage}%`;
+            
+            if (percentage === 100) {
+                badgeContainer.classList.add('bg-secondary', 'text-white');
+                percentageDisplay.classList.replace('text-secondary', 'text-white');
+            } else {
+                badgeContainer.classList.remove('bg-secondary', 'text-white');
+                percentageDisplay.classList.add('text-secondary');
+            }
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateCompletion);
+        });
+
+        // Add micro-interaction to list items
+        document.querySelectorAll('.protocol-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (e.target.type !== 'checkbox') {
+                    const cb = item.querySelector('input[type="checkbox"]');
+                    cb.checked = !cb.checked;
+                    updateCompletion();
+                }
+            });
+        });
+    </script>
+</body></html>

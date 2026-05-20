@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>7. Phase Rituals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="shared/styles.css" rel="stylesheet"/>
+<script src="shared/tailwind.config.js"></script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top AppBar - Derived from Shared Components -->
+<header class="w-full top-0 sticky z-50 bg-background">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="waves">waves</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary uppercase tracking-widest">FĒMME</h1>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary hover:opacity-70 transition-opacity cursor-pointer active:scale-95" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile pb-32 pt-8 md:px-margin-desktop">
+<!-- Hero Section: Editorial Image & Header -->
+<section class="mb-12">
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden mb-8 group">
+<img alt="Wellness Aesthetic" class="w-full h-full object-cover protocol-card-transition group-hover:scale-105" data-alt="A serene editorial photograph of a minimalist wellness space. Soft, natural morning sunlight filters through sheer linen curtains, casting gentle shadows across a warm-toned wooden floor. A single textured ceramic mug sits on a low-profile travertine table next to a sprig of dried eucalyptus. The atmosphere is calm, quiet, and deeply intentional, reflecting a high-end luxury lifestyle journal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsBrbIayk-4SKnjIZ3lV02nYB9XtdeEoZUoRGrT8rTsdXbJYeUN8vMNiJRYjg_uo4GztEp1sQdkbXJWQemnYgAp53EKXO1c8oIMrRxyL2XX2Rd8PK0O4G-syFHH2AHan3CcMsItg_D9Wog0tA6cE731UUbn5ZEk1C9GEsAhKPalnVMnv4PQMf7daxOCZzC0gH73opaNIWT5g7tR3E0JI-xXo8VMYQmGiReNSRU8D6Fx8MWI3ebwWDDcITnM7rkWZEE6oE3V3EU5MSs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-on-primary">
+<span class="font-label-md text-label-md bg-white/20 backdrop-blur-md px-4 py-1 rounded-full border border-white/30">CURRENT PHASE</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mt-2">Luteal protocol</h2>
+</div>
+</div>
+</section>
+<!-- Focused Protocol Container (Dark Mode Focused Section) -->
+<div class="bg-primary-container rounded-xl p-8 md:p-12 text-primary-fixed shadow-none">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Daily Rituals</h3>
+<p class="font-body-md text-on-primary-container">Grounding practices for the inner autumn.</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-white/5 border border-white/10 rounded-full px-6 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim filled-icon" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-md text-label-md text-white">Day 22 of 28</span>
+</div>
+</div>
+</div>
+<!-- Rituals Checklist -->
+<div class="space-y-4">
+<!-- Ritual Item 1 -->
+<div class="protocol-item group flex items-center justify-between p-6 bg-white/5 hover:bg-white/10 rounded-lg cursor-pointer protocol-card-transition" onclick="toggleRitual(this)">
+<div class="flex items-center gap-6">
+<div class="ritual-checkbox w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center protocol-card-transition">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 protocol-card-transition" data-icon="check">check</span>
+</div>
+<span class="font-headline-md text-headline-md text-white protocol-label protocol-card-transition">Eat 30g complex carbs</span>
+</div>
+<span class="material-symbols-outlined text-white/30 group-hover:text-white transition-colors" data-icon="restaurant">restaurant</span>
+</div>
+<!-- Ritual Item 2 -->
+<div class="protocol-item group flex items-center justify-between p-6 bg-white/5 hover:bg-white/10 rounded-lg cursor-pointer protocol-card-transition" onclick="toggleRitual(this)">
+<div class="flex items-center gap-6">
+<div class="ritual-checkbox w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center protocol-card-transition">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 protocol-card-transition" data-icon="check">check</span>
+</div>
+<span class="font-headline-md text-headline-md text-white protocol-label protocol-card-transition">Magnesium supplement</span>
+</div>
+<span class="material-symbols-outlined text-white/30 group-hover:text-white transition-colors" data-icon="pill">pill</span>
+</div>
+<!-- Ritual Item 3 -->
+<div class="protocol-item group flex items-center justify-between p-6 bg-white/5 hover:bg-white/10 rounded-lg cursor-pointer protocol-card-transition" onclick="toggleRitual(this)">
+<div class="flex items-center gap-6">
+<div class="ritual-checkbox w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center protocol-card-transition">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 protocol-card-transition" data-icon="check">check</span>
+</div>
+<span class="font-headline-md text-headline-md text-white protocol-label protocol-card-transition">Morning hydration</span>
+</div>
+<span class="material-symbols-outlined text-white/30 group-hover:text-white transition-colors" data-icon="water_drop">water_drop</span>
+</div>
+<!-- Ritual Item 4 -->
+<div class="protocol-item group flex items-center justify-between p-6 bg-white/5 hover:bg-white/10 rounded-lg cursor-pointer protocol-card-transition" onclick="toggleRitual(this)">
+<div class="flex items-center gap-6">
+<div class="ritual-checkbox w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center protocol-card-transition">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 protocol-card-transition" data-icon="check">check</span>
+</div>
+<span class="font-headline-md text-headline-md text-white protocol-label protocol-card-transition">Zone 2 Cardio (45 min)</span>
+</div>
+<span class="material-symbols-outlined text-white/30 group-hover:text-white transition-colors" data-icon="monitoring">monitoring</span>
+</div>
+<!-- Ritual Item 5 -->
+<div class="protocol-item group flex items-center justify-between p-6 bg-white/5 hover:bg-white/10 rounded-lg cursor-pointer protocol-card-transition" onclick="toggleRitual(this)">
+<div class="flex items-center gap-6">
+<div class="ritual-checkbox w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center protocol-card-transition">
+<span class="material-symbols-outlined text-white text-[18px] opacity-0 protocol-card-transition" data-icon="check">check</span>
+</div>
+<span class="font-headline-md text-headline-md text-white protocol-label protocol-card-transition">Sleep by 10:30 PM</span>
+</div>
+<span class="material-symbols-outlined text-white/30 group-hover:text-white transition-colors" data-icon="bedtime">bedtime</span>
+</div>
+</div>
+</div>
+<!-- Editorial Info Cards - Masonry Style -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-12">
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block">WHY LUTEAL?</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">Metabolism &amp; Satiety</h4>
+<p class="font-body-md text-on-surface-variant">Your metabolic rate increases by up to 10% during this phase. Prioritizing complex carbohydrates prevents cortisol spikes and maintains steady energy levels throughout the afternoon dip.</p>
+</div>
+<button class="mt-8 self-start px-8 py-3 bg-primary text-white rounded-full font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all">Read Protocol Detail</button>
+</div>
+<div class="relative rounded-xl overflow-hidden h-64 md:h-auto min-h-[300px]">
+<img alt="Protocol Nutrition" class="w-full h-full object-cover" data-alt="A top-down editorial food photograph showcasing a ceramic bowl of creamy steel-cut oats topped with sliced roasted pears, a dollop of almond butter, and toasted pumpkin seeds. The lighting is warm and directional, highlighting the rich textures of the food. The color palette is composed of soft beiges, warm browns, and earthy ochres, evoking a sense of nourishment and seasonal comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJeO5ly6cj-YMJb_ozARr6Vmheqnf_sIp_JnTO1RSGBdp4lYlfA24vw4Tm-zrJwgXIYKxe_KGZUBQ9XpFXi-wUppXatfWVT3Y46D8TDL9tnRupO5YtER7xA6Y3ocRozR-fxusjo7aOIlbGvf0iU6iBdjse4RBOlW-Q2CNwXBV6GJY7ijZJg4RntwO_PkqloKTAlnIWSEHBlDg25r5p98BFNpABSj2l7IKhxAdOlhKB8CvHOKpTFitFS6lwF0yDuvb3by9WJlQlpRXc"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-primary/60 to-transparent">
+<p class="text-white font-headline-md text-headline-md">Nutritional Focus: Slow Release</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar - Derived from Shared Components -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4 md:hidden">
+<div class="bg-surface-container-lowest/95 backdrop-blur-xl flex justify-around items-center w-full max-w-[400px] rounded-full px-2 py-3 shadow-lg border border-outline-variant/20">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 hover:text-primary transition-all cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[22px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter mt-1">Briefing</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 hover:text-primary transition-all cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[22px]" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter mt-1">Today</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-6 py-2 shadow-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[22px] filled-icon" data-icon="self_care">self_care</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter mt-0.5">Rituals</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 hover:text-primary transition-all cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[22px]" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter mt-1">Progress</span>
+</div>
+</div>
+</nav>
+<!-- Desktop Sidebar/Bottom bar alternative handled via layout -->
+<script>
+        function toggleRitual(element) {
+            const checkbox = element.querySelector('.ritual-checkbox');
+            const checkIcon = element.querySelector('.material-symbols-outlined');
+            const label = element.querySelector('.protocol-label');
+            
+            checkbox.classList.toggle('checkbox-active');
+            checkIcon.classList.toggle('opacity-0');
+            label.classList.toggle('strikethrough');
+
+            // Micro-interaction: Scale effect
+            element.classList.add('scale-98');
+            setTimeout(() => {
+                element.classList.remove('scale-98');
+            }, 100);
+
+            // Confetti effect or atmospheric subtle flash if all checked (simple console log for demo)
+            const allItems = document.querySelectorAll('.protocol-item');
+            const checkedItems = document.querySelectorAll('.checkbox-active');
+            if (checkedItems.length === allItems.length) {
+                console.log("Protocol Complete");
+            }
+        }
+
+        // Add a subtle parallax effect on the hero image on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('img[data-alt*="A serene editorial photograph"]');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.1}px) scale(1.05)`;
+            }
+        });
+    </script>
+<script src="shared/animations.js"></script>
+</body></html>

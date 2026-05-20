@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>F\u0112MME - Frictionless Check-in</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="shared/styles.css" rel="stylesheet"/>
+<script src="shared/tailwind.config.js"></script>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-50 bg-background">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">waves</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary uppercase tracking-widest">F\u0112MME</h1>
+<button class="text-primary hover:opacity-70 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile pt-8 pb-32">
+<!-- Title -->
+<div class="mb-12">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase mb-2 block">Journal</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">14. Frictionless Check-in</h2>
+</div>
+<!-- Section 1: Mood & Energy (Masonry Style Bento) -->
+<section class="mb-12">
+<p class="font-label-md text-label-md mb-6 uppercase tracking-wider text-outline">How do you feel today?</p>
+<div class="masonry-grid">
+<!-- High Energy Card -->
+<button class="group relative overflow-hidden bg-surface-container rounded-lg p-6 flex flex-col justify-between items-start transition-all duration-300 hover:bg-surface-container-high h-[180px]" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-[.active]:text-on-primary">bolt</span>
+<span class="font-headline-md text-headline-md group-[.active]:text-on-primary">High Energy</span>
+<div class="absolute inset-0 bg-primary opacity-0 group-[.active]:opacity-100 transition-opacity -z-10"></div>
+</button>
+<!-- Anxious Card -->
+<button class="group relative overflow-hidden bg-surface-container rounded-lg p-6 flex flex-col justify-between items-start transition-all duration-300 hover:bg-surface-container-high h-[220px]" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-[.active]:text-on-primary">waves</span>
+<span class="font-headline-md text-headline-md group-[.active]:text-on-primary">Anxious</span>
+<div class="absolute inset-0 bg-primary opacity-0 group-[.active]:opacity-100 transition-opacity -z-10"></div>
+</button>
+<!-- Calm Card -->
+<button class="group relative overflow-hidden bg-surface-container rounded-lg p-6 flex flex-col justify-between items-start transition-all duration-300 hover:bg-surface-container-high h-[160px]" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-[.active]:text-on-primary">spa</span>
+<span class="font-headline-md text-headline-md group-[.active]:text-on-primary">Calm</span>
+<div class="absolute inset-0 bg-primary opacity-0 group-[.active]:opacity-100 transition-opacity -z-10"></div>
+</button>
+<!-- Focused Card -->
+<button class="group relative overflow-hidden bg-surface-container rounded-lg p-6 flex flex-col justify-between items-start transition-all duration-300 hover:bg-surface-container-high h-[200px]" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-[.active]:text-on-primary">target</span>
+<span class="font-headline-md text-headline-md group-[.active]:text-on-primary">Focused</span>
+<div class="absolute inset-0 bg-primary opacity-0 group-[.active]:opacity-100 transition-opacity -z-10"></div>
+</button>
+<!-- Low Mood Card -->
+<button class="group relative overflow-hidden bg-surface-container rounded-lg p-6 flex flex-col justify-between items-start transition-all duration-300 hover:bg-surface-container-high h-[180px]" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-[.active]:text-on-primary">cloud_queue</span>
+<span class="font-headline-md text-headline-md group-[.active]:text-on-primary">Low Mood</span>
+<div class="absolute inset-0 bg-primary opacity-0 group-[.active]:opacity-100 transition-opacity -z-10"></div>
+</button>
+<!-- Social Card -->
+<button class="group relative overflow-hidden bg-surface-container rounded-lg p-6 flex flex-col justify-between items-start transition-all duration-300 hover:bg-surface-container-high h-[240px]" onclick="toggleCard(this)">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-[.active]:text-on-primary">groups</span>
+<span class="font-headline-md text-headline-md group-[.active]:text-on-primary">Social</span>
+<div class="absolute inset-0 bg-primary opacity-0 group-[.active]:opacity-100 transition-opacity -z-10"></div>
+</button>
+</div>
+</section>
+<!-- Section 2: Bloat Slider -->
+<section class="mb-16 bg-surface-container rounded-lg p-8">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="font-label-md text-label-md uppercase tracking-wider text-outline mb-2">Internal State</p>
+<h3 class="font-headline-md text-headline-md">Bloat</h3>
+</div>
+<span class="font-headline-md text-headline-md text-secondary" id="bloat-value">Minimal</span>
+</div>
+<div class="relative w-full h-12 flex items-center">
+<input class="w-full h-1 bg-surface-variant rounded-full appearance-none outline-none" id="bloat-slider" max="100" min="0" type="range" value="20"/>
+</div>
+<div class="flex justify-between mt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant">NONE</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">INTENSE</span>
+</div>
+</section>
+<!-- Section 3: Visual Context (Editorial Image) -->
+<section class="mb-16">
+<div class="rounded-lg overflow-hidden h-[300px] md:h-[400px] relative">
+<img alt="Wellness Aesthetic" class="w-full h-full object-cover" data-alt="A peaceful and high-end editorial photo featuring a minimalist wellness setting. Soft, natural sunlight filters through sheer linen curtains onto a clean, light-colored surface. A ceramic bowl with fresh botanicals and a glass of pure water sit alongside an open, cream-colored journal. The atmosphere is serene, airy, and warm, capturing a luxury lifestyle morning ritual with a palette of soft beiges, warm whites, and muted greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7rgOFf_I043QFGxtkxGaRPUc3FgrHOrPMVAbA3z94t_TnAcIjONAvJUUjJY5zT5-yA_kpJGYw_nFCUrpA_z2AmOmmCcjnlvH2L7tv4E4qHrHMz7Q2BSMDT7NEJkMhRybp66DAypP6x98YsxmHPQ0b1FkyQB4FposmLJulZbWqx-CTTEKth8eZkyVBOXzE39t-TiRyOSxJDMxS6vXQ7CPFGRoboH6ExSNvejo5aTwOfcUtEC6euvXcpbPAjwG_b0U3Zi0XBl0YcaYC"/>
+<div class="absolute bottom-8 left-8 text-on-primary bg-primary/20 backdrop-blur-md px-6 py-4 rounded-lg">
+<p class="font-body-md italic text-body-lg">"The body is a temple; treat it with gentle awareness."</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Action Button / Save Footer -->
+<footer class="fixed bottom-0 left-0 right-0 bg-background/80 backdrop-blur-xl py-6 px-margin-mobile border-t border-surface-container">
+<div class="max-w-container-max mx-auto flex justify-center">
+<button class="w-full md:w-[400px] bg-primary text-on-primary font-label-md text-label-md py-5 rounded-full uppercase tracking-widest hover:opacity-90 active:scale-[0.98] transition-all">
+                Save Check-in
+            </button>
+</div>
+</footer>
+<!-- Bottom Navigation Bar Placeholder (Per Guidelines context) -->
+<!-- Not rendered as this is a focused transactional/journaling screen -->
+<script>
+        // Micro-interaction: Toggle active state for cards
+        function toggleCard(el) {
+            el.classList.toggle('active');
+            // Subtle haptic-like scaling effect
+            el.classList.add('scale-95');
+            setTimeout(() => {
+                el.classList.remove('scale-95');
+            }, 100);
+        }
+
+        // Bloat Slider update
+        const slider = document.getElementById('bloat-slider');
+        const output = document.getElementById('bloat-value');
+        
+        const labels = ["Minimal", "Slight", "Noticeable", "Moderate", "High", "Intense"];
+        
+        slider.oninput = function() {
+            const index = Math.floor(this.value / 20.1);
+            output.innerHTML = labels[index];
+            
+            // Interaction visual effect
+            output.style.opacity = '0.5';
+            setTimeout(() => output.style.opacity = '1', 50);
+        }
+
+        // Entry animation for cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.masonry-grid button');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+<script src="shared/animations.js"></script>
+</body></html>

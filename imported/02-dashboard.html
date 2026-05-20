@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #faf9f7;
+            color: #1a1c1b;
+            -webkit-font-smoothing: antialiased;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f1f1ef",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#93918d",
+                        "primary-fixed": "#e8e1db",
+                        "surface-container-high": "#e9e8e6",
+                        "error": "#ba1a1a",
+                        "tertiary": "#161613",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#812716",
+                        "surface-tint": "#625e59",
+                        "background": "#faf9f7",
+                        "inverse-surface": "#2f3130",
+                        "inverse-primary": "#ccc5bf",
+                        "surface-dim": "#dadad8",
+                        "tertiary-fixed": "#e6e2dd",
+                        "on-primary-container": "#96918b",
+                        "primary-fixed-dim": "#ccc5bf",
+                        "surface-container-highest": "#e3e20",
+                        "on-background": "#1a1c1b",
+                        "on-secondary-fixed": "#3e0400",
+                        "on-primary-fixed": "#1e1b17",
+                        "on-primary": "#ffffff",
+                        "secondary": "#a13e2b",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c9c6c1",
+                        "on-surface": "#1a1c1b",
+                        "surface": "#faf9f7",
+                        "on-surface-variant": "#4b463f",
+                        "on-tertiary-fixed-variant": "#484743",
+                        "primary-container": "#2d2a26",
+                        "on-secondary-container": "#721c0c",
+                        "secondary-fixed-dim": "#ffb4a5",
+                        "surface-bright": "#faf9f7",
+                        "primary": "#181612",
+                        "surface-container": "#efeeec",
+                        "surface-container-low": "#f4f3f1",
+                        "on-primary-fixed-variant": "#4a4642",
+                        "tertiary-container": "#2b2a27",
+                        "secondary-container": "#fc836a",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#cdc5bc",
+                        "outline": "#7c766e",
+                        "secondary-fixed": "#ffdad3",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e3e2e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Libre Caslon Text"],
+                        "body-md": ["DM Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "label-sm": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-background">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="waves">waves</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary uppercase tracking-widest">FĒMME</h1>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant hover:opacity-70 transition-opacity cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32">
+<!-- Hero Section -->
+<section class="relative mt-4 mb-12 group">
+<div class="relative w-full aspect-[4/5] md:aspect-[16/7] overflow-hidden bg-surface-container rounded-lg">
+<img alt="Wellness Aesthetic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A soft-focus, high-end editorial photograph of a blooming lily in warm morning light. The image features organic textures and a palette of creamy whites, pale beiges, and soft greens. The lighting is ethereal and diffused, creating a serene and luxurious mood that aligns with a high-end health and wellness brand identity. The composition is artistic and minimalist, evoking a sense of calm and intentionality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs1FNFlEGWCF3hP_XDOshwZa6hk39ZTC24X8t5CBN--5v3obmh27oAZIeWGUK39lE59tpROykqcd4Cswpy-C00LuCAfBHYF4MRCkIT2NAo5tB71JoXFidKEP1jwWKJtxIyWV0cVLZPXEUJnXztRt9zco0mr8w7maV1VOx4xPdLRIM0iZBp5rn6NkYnWNLxd3BwkPpHgSNoUr1ZCSEzteb--ZYNcMoTRXtJByfdYf4tMcm52rOw8Ah2C9Oc8ktjLHGOorSYbpq-c057"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute top-8 left-8">
+<div class="inline-flex items-center px-4 py-2 bg-background/80 backdrop-blur-md rounded-full">
+<span class="font-label-sm text-label-sm text-primary uppercase">Day 14 • Ovulatory</span>
+</div>
+</div>
+<div class="absolute bottom-12 left-8 md:left-12 right-8">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-4">A peak in energy.</h2>
+<p class="font-body-md text-body-md text-white/90 max-w-md">
+                        Your estrogen levels have reached their highest point, triggering a surge in vitality and sociability. It is a time for high-intensity movement and connection.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Metric Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-12">
+<!-- HRV Card -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between h-48 border border-transparent hover:border-primary/10 transition-colors rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-1">HRV Status</span>
+<h3 class="font-headline-md text-headline-md text-primary">Balanced</h3>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-display-lg text-headline-lg text-primary">68<span class="text-label-md">ms</span></span>
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<!-- Sleep Card -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between h-48 border border-transparent hover:border-primary/10 transition-colors rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-1">Deep Sleep</span>
+<h3 class="font-headline-md text-headline-md text-primary">Restorative</h3>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-display-lg text-headline-lg text-primary">2.4<span class="text-label-md">hr</span></span>
+<span class="material-symbols-outlined text-secondary" data-icon="bedtime" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+</div>
+<!-- Focus Card -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between h-48 border border-transparent hover:border-primary/10 transition-colors rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-1">Daily Intent</span>
+<h3 class="font-headline-md text-headline-md text-primary">Expansion</h3>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">High Focus</span>
+<span class="material-symbols-outlined text-secondary" data-icon="target">target</span>
+</div>
+</div>
+<!-- Recovery Card -->
+<div class="bg-surface-container-low p-8 flex flex-col justify-between h-48 border border-transparent hover:border-primary/10 transition-colors rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-1">Recovery</span>
+<h3 class="font-headline-md text-headline-md text-primary">Ready</h3>
+</div>
+<div class="flex items-end justify-between">
+<span class="font-display-lg text-headline-lg text-primary">92<span class="text-label-md">%</span></span>
+<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
+</div>
+</div>
+</section>
+<!-- Editorial Masonry / Discovery -->
+<section class="mb-12">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-6 px-1">Curated For Today</h4>
+<div class="masonry-grid">
+<!-- Card 1 -->
+<div class="flex flex-col gap-4">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container rounded-lg">
+<img alt="Movement" class="w-full h-full object-cover" data-alt="A high-fashion editorial photo of a woman in minimalist yoga attire performing a graceful, strength-based pose in a sun-drenched, lime-wash studio. The lighting is warm and directional, creating soft shadows. The aesthetic is extremely clean and high-end, focusing on form and texture. The color palette is composed of neutrals, warm beiges, and soft ochre." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2dAKp6zgsSnlru9cH8lxUD_dmo1pTIVQ8GBsZwKK7g3ka-ZqKbfLjJsiwrMzZssb3nC8ToPYdiQC9qci7ELGiqeH9cYqWKLsgACO4rBKSAOFgy5h1vNXVu_6LkhNbNMttDGUl7uc3NQkd-GZG-oqhTcj0vi4X5GlhbvAgriknGEy6P3q27zOuUjrlX5cAYbvZ9eJPpTJao0RBVz8hQlCUqhBYolV-6mq5mLgApxvFpuki-hosbJVh0Pzy8oEMDnxI05x3Z4pVl3p5"/>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Movement</span>
+<h5 class="font-headline-md text-headline-md text-primary mt-1">Sculpt &amp; Release</h5>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-4">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container rounded-lg">
+<img alt="Nutrition" class="w-full h-full object-cover" data-alt="A minimalist overhead shot of a beautifully plated nourishing breakfast bowl on a textured stone surface. The bowl contains colorful organic ingredients like dragon fruit, seeds, and microgreens. The lighting is bright and natural, reflecting a high-end wellness magazine aesthetic. The colors are vibrant yet sophisticated against a neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq03baCtNTb_9jjdTVLB3OIkUmOLrSiLF_gXAHXBI9DP_EDwdtCDx0z5qKpgE-PtqVrtkNY9zkDKoxxaBP9UiwlVcXzLYf9KsKdZl3dN9OkYpNI_Q8m45ZcEcZG5pLD6SLAfAEEd4b9xDwQkhE-IxISMn-uGxtn6xBFMdN1Mv-VeWjeO8pvSjq3c2cQQU2oicdlKQSTGORbTsSIHRhuXn8W1c8JL5AvyX7rkW8SVP0xfJKcKYlb2auWvh4hKPxtFtVJhAQ5qLhQipA"/>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Nutrition</span>
+<h5 class="font-headline-md text-headline-md text-primary mt-1">Follicular Glow Bowl</h5>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-4">
+<div class="aspect-[3/5] overflow-hidden bg-surface-container rounded-lg">
+<img alt="Rituals" class="w-full h-full object-cover" data-alt="A close-up photograph of high-end skincare bottles and an incense stick on a marble tray. Smoke from the incense curls elegantly through the air. The lighting is low-key and moody, suggesting a calming evening ritual. The visual style is luxurious and tactile, with a color palette of deep browns, creams, and grey marble." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW2y7C7g3I35Up3L5XYDeqbuPoN9BrEw6bnOB9yaLCepVneqJkdXjbT1dZ7YgE3dwAoH9EDXrJB_VApMVPslrDv0mokQKTm7G9ttI72HnJYTY4IW2xQjy1XM1rjppOs2Rqngr5NX0PtzYgBvaFs5Uc2qsU4FRbyQ1N49tp7DW9uqsAyej5DmYr1aCv8v0k4FdCxy0yMWm63IoZxWerpdfZgFuebgeDD7cY1qvFlp0XLU3tnXiVYbXOL3MSaJk33zZ9Y150lrkXJnJb"/>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Rituals</span>
+<h5 class="font-headline-md text-headline-md text-primary mt-1">Evening Unwind</h5>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col gap-4">
+<div class="aspect-[1/1] overflow-hidden bg-surface-container rounded-lg">
+<img alt="Mindset" class="w-full h-full object-cover" data-alt="A serene landscape of a calm ocean during the blue hour, with the sun just below the horizon. The water is perfectly still, reflecting a soft purple and blue sky. The image captures a profound sense of peace and expansion. The aesthetic is painterly and refined, aligning with a luxury meditative experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXj0_6912TcX4nqB_vrwyA8sBWEc_diAjXSs_PLwTcMpDKKh4wu7ykpsx4uUqADzuiSXYDWz0Apeg7Lbs56MrEFLVFtB4bZJY4-TznetO08XyenBCkSOm0uxUEUVkV7fjHt1hfFBO0vhUuLrjdoo-emLqxkNL0eGrsP2n-rFLqU2V7HvTiOf_c7-7InCuiDFe2O-NdqIM6rSi2F11eul0AsKjDStZbJDgiU7lggjIzVc-d67XrOOMsbglx53R5DEJWSKEqJ9dpvmO5"/>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Mindset</span>
+<h5 class="font-headline-md text-headline-md text-primary mt-1">The Power of Presence</h5>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="flex justify-center mt-16 mb-24">
+<button class="px-12 py-5 bg-primary text-background rounded-full font-label-md text-label-md uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-none">
+                Generate Protocol
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4">
+<div class="bg-surface-container-low/90 backdrop-blur-md rounded-full w-[90%] max-w-[500px] flex justify-between items-center p-2">
+<!-- The Briefing - Active -->
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-6 py-2 transition-all duration-300 ease-out active:scale-90 group" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter">The Briefing</span>
+</a>
+<!-- Today -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter">Today</span>
+</a>
+<!-- Rituals -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="self_care">self_care</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter">Rituals</span>
+</a>
+<!-- Progress -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-0.5" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-[10px] uppercase tracking-tighter">Progress</span>
+</a>
+</div>
+</nav>
+<script>
+        // Micro-interactions and subtle scroll reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bg-surface-container-low, .masonry-grid > div');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-1000', 'ease-out');
+                observer.observe(card);
+            });
+
+            // Active button scale effect
+            const buttons = document.querySelectorAll('button, a');
+            buttons.forEach(btn => {
+                btn.addEventListener('mousedown', () => {
+                    btn.classList.add('scale-95');
+                });
+                btn.addEventListener('mouseup', () => {
+                    btn.classList.remove('scale-95');
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.classList.remove('scale-95');
+                });
+            });
+        });
+    </script>
+</body></html>

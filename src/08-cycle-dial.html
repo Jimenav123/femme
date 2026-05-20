@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>8. Cycle Dial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="shared/styles.css" rel="stylesheet"/>
+<script src="shared/tailwind.config.js"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar from JSON -->
+<header class="w-full top-0 sticky bg-background z-50">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto">
+<div class="hover:opacity-70 transition-opacity active:scale-95 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-primary" data-icon="waves">waves</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary uppercase tracking-widest">FĒMME</h1>
+<div class="hover:opacity-70 transition-opacity active:scale-95 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-margin-mobile py-10 max-w-container-max mx-auto w-full">
+<!-- Cycle Dial Section -->
+<section class="flex flex-col items-center mb-16 w-full">
+<div class="dial-container flex items-center justify-center">
+<svg class="dial-svg w-full h-full" viewbox="0 0 100 100">
+<!-- Base Track -->
+<circle cx="50" cy="50" fill="none" r="45" stroke="#F1EDE8" stroke-width="12"></circle>
+<!-- Menstrual Phase (Day 1-5) -->
+<path class="phase-arc" d="M 50,5 A 45,45 0 0,1 86.8,24" stroke="#E3E2E0"></path>
+<!-- Follicular Phase (Day 6-12) -->
+<path class="phase-arc" d="M 86.8,24 A 45,45 0 0,1 91,66" stroke="#E8E1DB"></path>
+<!-- Ovulatory Phase (Day 13-17) -->
+<path class="phase-arc" d="M 91,66 A 45,45 0 0,1 63,93" stroke="#A13E2B" stroke-width="14"></path>
+<!-- Luteal Phase (Day 18-28) -->
+<path class="phase-arc" d="M 63,93 A 45,45 0 0,1 50,5" stroke="#E3E2E0"></path>
+<!-- Current Day Indicator (Day 14) -->
+<circle class="active-dot" cx="94" cy="55" fill="#A13E2B" r="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-1">Rituals</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Day 14</h2>
+<p class="font-body-md text-body-md text-secondary font-medium mt-2 italic">Ovulatory Phase</p>
+</div>
+</div>
+</section>
+<!-- Biological Insight Card -->
+<section class="w-full md:max-w-2xl">
+<div class="bg-surface-container-low rounded-lg p-8 md:p-10 flex flex-col gap-8 transition-colors duration-300">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase">Biological Insight</span>
+<h3 class="font-headline-md text-headline-md">The Peak of Estrogen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+                        Today marks your peak fertile window. Your estrogen levels have reached their zenith, triggering a surge in Luteinizing Hormone (LH) which prompts ovulation. You likely feel more sociable, energetic, and cognitively sharp. Your body is naturally primed for high-performance activities.
+                    </p>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-2 gap-6">
+<!-- Energy Level -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-end">
+<span class="font-label-sm text-label-sm uppercase opacity-60">Energy</span>
+<span class="font-body-md text-body-md font-bold">High</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[92%] rounded-full"></div>
+</div>
+</div>
+<!-- Focus Area -->
+<div class="flex flex-col gap-3">
+<span class="font-label-sm text-label-sm uppercase opacity-60">Primary Focus</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="fitness_center">fitness_center</span>
+<span class="font-body-md text-body-md font-medium">Strength Training</span>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<button class="text-background font-label-md py-4 rounded-full w-full hover:opacity-90 transition-opacity active:scale-95 duration-200 border-2 border-primary text-primary bg-transparent">
+                    Log Daily Ritual
+                </button>
+</div>
+</section>
+<!-- Editorial Masonry Preview (Contextual) -->
+<section class="w-full mt-16 grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<div class="flex flex-col gap-2">
+<img class="gallery-image rounded-lg w-full aspect-[3/4] object-cover" data-alt="A serene woman practicing yoga in a high-end minimalist sunlit studio with warm oak floors. The lighting is soft and natural, emphasizing a calm and intentional wellness atmosphere. The scene is shot with a luxury lifestyle editorial aesthetic, using a warm neutral color palette and clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIvQVCds8fkZiiOpM6DENjtZR1Y5WrkLXWX_hD_pUUXL6UnLDMEoUWWJTwx9NLycwd9lMjygSAhmNf9GhraAQbNUcn3CYMOWaCHWBjLti62fBpNV-ikieTCjeQs_mUysVWgIQtIezdVo1L0OAC4NAkOTWvmxntx4rKWrEeaHfa9bmDvdFonjE7Cx7IXiCrN3ro4vlxpByly-bKSsbHSG07Li_aPADTWt0ssu7ViYd82OiBN7pJNSKa8HWBUfY9pyqMJYbpo7gkzuGt"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant px-2 mt-2">MINDFULNESS</p>
+<h4 class="font-headline-md text-headline-md text-sm px-2">Morning Sunlight Alignment</h4>
+</div>
+<div class="flex flex-col gap-2 translate-y-8">
+<img class="gallery-image rounded-lg w-full aspect-square object-cover" data-alt="A sophisticated close-up of a premium health tonic and botanical extracts on a limestone surface. The composition is artistic and tactile, featuring soft shadows and high-end glass packaging. The overall vibe is clean, pharmaceutical-meets-luxury, in a bright daylight setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSAxB8kkkV_b-yNHYn-vsxhT2_sUCUnHXxRa8vG7wbTK7jojOiocq3WkZrRhxMVtc3WvV_Qtp1I3JjVYi9_1V4V1xYiWCP7L6TaDvZsrJRGOEXGB7PqEONdpU4_ZTolhkHXGW8Kjt_VdlUALbEFYLj8tb1bCC-lqzvuJdLVVUowj6KAi0vgmedGX6dfRz4THXTiJW7TG3IzHOcKYDI8ilSVsRd0YTz--rG3sCa1MHvc1acr1wBUscXXEnyOLhOjSy2grxHvY41V9-x"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant px-2 mt-2">NUTRITION</p>
+<h4 class="font-headline-md text-headline-md text-sm px-2">Hormonal Support Tonic</h4>
+</div>
+<div class="hidden md:flex flex-col gap-2">
+<img class="gallery-image rounded-lg w-full aspect-[4/5] object-cover" data-alt="A beautiful, minimalist editorial shot of a woman running along a pristine coastline during the golden hour. The water is sparkling and the colors are warm and vibrant with deep oranges and soft creams. The mood is empowering and high-energy, perfectly capturing the vitality of the ovulatory phase." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWNB9vxElgX0bDlEhCLkkDvH7SC1OLWZT_VlEHE6ooOoJ-DMXe6fMYMag2ExeYuG6OtiFmq723cYeUhIP7COeKNaZhmsVVba8f-SWRfeXHddnhxxsdV8vWkzaASFJ9F7pvaxXvYNwLg97OjZVlV8tbcHN4Z6WkwFgKXtLDoGv_GM2C0L78uaoo0EY0IDxg3v5yf4dpwJ6kQkUTfM-IMtPueI-0MbRRLSU1CztR2ma1uIJBifP97RzPOcWScqMSwgJXSpHVK9GDYLzU"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant px-2 mt-2">MOVEMENT</p>
+<h4 class="font-headline-md text-headline-md text-sm px-2">High Intensity Cadence</h4>
+</div>
+</section>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4">
+<div class="bg-surface-container-highest/95 backdrop-blur-xl w-[90%] md:max-w-md rounded-full flex justify-between items-center p-2 shadow-lg">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors cursor-pointer active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">The Briefing</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors cursor-pointer active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Today</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-6 py-2 active:scale-90 transition-all duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined" data-icon="self_care" style="font-variation-settings: 'FILL' 1;">self_care</span>
+<span class="font-label-sm text-label-sm">Rituals</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors cursor-pointer active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-sm text-label-sm">Progress</span>
+</div>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for the dial
+        document.addEventListener('DOMContentLoaded', () => {
+            const dial = document.querySelector('.dial-svg');
+            const dot = document.querySelector('.active-dot');
+            
+            // Subtle breathing effect for the current day dot
+            setInterval(() => {
+                dot.style.transform = `scale(${1 + Math.sin(Date.now() / 1000) * 0.2})`;
+            }, 50);
+        });
+    </script>
+<script src="shared/animations.js"></script>
+</body></html>

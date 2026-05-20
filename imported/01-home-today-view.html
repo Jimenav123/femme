@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #faf9f7;
+            color: #1a1c1b;
+            -webkit-font-smoothing: antialiased;
+            /* Smooth cross-fade transition support */
+            transition: opacity 0.4s ease-in-out;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom curve for the 'one job' focus */
+        .hero-mask {
+            clip-path: ellipse(140% 100% at 50% 0%);
+        }
+        .page-fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "background": "#faf9f7",
+                        "surface-container": "#efeeec",
+                        "secondary-fixed-dim": "#ffb4a5",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f4f3f1",
+                        "on-surface-variant": "#4b463f",
+                        "on-secondary-fixed-variant": "#812716",
+                        "inverse-surface": "#2f3130",
+                        "outline-variant": "#cdc5bc",
+                        "primary-fixed-dim": "#ccc5bf",
+                        "primary-fixed": "#e8e1db",
+                        "on-surface": "#1a1c1b",
+                        "surface-container-highest": "#e3e2e0",
+                        "surface-container-high": "#e9e8e6",
+                        "surface-bright": "#faf9f7",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdad3",
+                        "on-secondary-fixed": "#3e0400",
+                        "on-primary-container": "#96918b",
+                        "primary-container": "#2d2a26",
+                        "inverse-on-surface": "#f1f1ef",
+                        "surface": "#faf9f7",
+                        "inverse-primary": "#ccc5bf",
+                        "on-primary-fixed": "#1e1b17",
+                        "primary": "#181612",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "tertiary-fixed-dim": "#c9c6c1",
+                        "tertiary-fixed": "#e6e2dd",
+                        "tertiary": "#161613",
+                        "on-secondary-container": "#721c0c",
+                        "on-primary-fixed-variant": "#4a4642",
+                        "surface-variant": "#e3e2e0",
+                        "on-tertiary-container": "#93918d",
+                        "outline": "#7c766e",
+                        "secondary": "#a13e2b",
+                        "secondary-container": "#fc836a",
+                        "tertiary-container": "#2b2a27",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1b",
+                        "on-tertiary-fixed-variant": "#484743",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dadad8",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#625e59"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "container-max": "1440px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["DM Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "body-md": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-md": ["DM Sans"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface flex flex-col min-h-[100dvh] page-fade-in">
+<!-- Top Bar -->
+<header class="w-full bg-background pt-4 px-margin-mobile flex justify-between items-center z-10">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md text-primary uppercase tracking-widest">FĒMME</h1>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_circle">account_circle</span>
+</header>
+<main class="flex-grow flex flex-col items-center">
+<!-- Single Focus: Today's Guidance -->
+<section class="w-full flex-grow flex flex-col">
+<!-- Large Focus Image & Headline (Highest Priority) -->
+<div class="relative w-full aspect-[4/5] mt-6 px-margin-mobile overflow-hidden">
+<div class="relative h-full w-full rounded-xl overflow-hidden shadow-2xl">
+<img alt="Wellness Aesthetic" class="w-full h-full object-cover" data-alt="A soft-focus, high-end editorial photograph of a blooming lily in warm morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs1FNFlEGWCF3hP_XDOshwZa6hk39ZTC24X8t5CBN--5v3obmh27oAZIeWGUK39lE59tpROykcd4Cswpy-C00LuCAfBHYF4MRCkIT2NAo5tB71JoXFidKEP1jwWKJtxIyWV0cVLZPXEUJnXztRt9zco0mr8w7maV1VOx4xPdLRIM0iZBp5rn6NkYnWNLxd3BwkPpHgSNoUr1ZCSEzteb--ZYNcMoTRXtJByfdYf4tMcm52rOw8Ah2C9Oc8ktjLHGOorSYbpq-c057"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+<div class="absolute top-6 left-6">
+<div class="px-4 py-1.5 bg-white/20 backdrop-blur-xl rounded-full border border-white/30">
+<span class="font-label-sm text-[10px] text-white uppercase tracking-widest">Day 14 • Ovulatory</span>
+</div>
+</div>
+<div class="absolute bottom-10 left-8 right-8">
+<h2 class="font-display-lg text-white mb-2 leading-tight">Peak Radiance.</h2>
+<p class="font-body-md text-white/80 max-w-[280px]">Your energy is at its zenith. Use this window for high-impact creation.</p>
+<!-- Progressive Disclosure Anchor -->
+<div class="mt-6 flex items-center gap-2 text-white/60">
+<span class="font-label-sm uppercase tracking-tighter text-[10px]">Swipe for insights</span>
+<span class="material-symbols-outlined text-[16px] animate-bounce" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Thumb Zone Primary Action -->
+<div class="mt-auto px-margin-mobile pb-24 w-full flex flex-col items-center">
+<button class="w-full py-5 bg-primary text-background rounded-full font-label-md text-label-md uppercase tracking-[0.2em] shadow-xl hover:bg-primary/90 transition-all active:scale-[0.98]" onclick="window.location.href='{{DATA:SCREEN:SCREEN_38}}'">
+                    Generate Protocol
+                </button>
+<p class="mt-4 font-label-sm text-[11px] text-on-surface-variant/60 uppercase tracking-widest">Personalized for your peak state</p>
+</div>
+</section>
+</main>
+<!-- Refined Bottom Nav Bar (Thumb Zone) -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4"><div class="bg-surface-container-low/90 dark:bg-surface-container-highest/90 backdrop-blur-md rounded-full w-[90%] flex justify-around items-center p-2"><a class="flex flex-col items-center justify-center bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-full px-6 py-2 transition-all active:scale-90" href="{{DATA:SCREEN:SCREEN_5}}"><span class="material-symbols-outlined">dashboard</span><span class="font-label-sm text-label-sm">The Briefing</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="{{DATA:SCREEN:SCREEN_53}}"><span class="material-symbols-outlined">auto_awesome</span><span class="font-label-sm text-label-sm">Today</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="{{DATA:SCREEN:SCREEN_46}}"><span class="material-symbols-outlined">self_care</span><span class="font-label-sm text-label-sm">Rituals</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="{{DATA:SCREEN:SCREEN_59}}"><span class="material-symbols-outlined">analytics</span><span class="font-label-sm text-label-sm">Progress</span></a></div></nav>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Subtle entry animations
+            const main = document.querySelector('main');
+            main.classList.add('opacity-0', 'translate-y-4');
+            setTimeout(() => {
+                main.classList.add('transition-all', 'duration-700', 'ease-out');
+                main.classList.remove('opacity-0', 'translate-y-4');
+            }, 100);
+
+            // Active button scale effect
+            const buttons = document.querySelectorAll('button, a');
+            buttons.forEach(btn => {
+                btn.addEventListener('touchstart', () => {
+                    btn.classList.add('scale-95');
+                });
+                btn.addEventListener('touchend', () => {
+                    btn.classList.remove('scale-95');
+                });
+            });
+
+            // Smooth cross-fade logic for links
+            document.querySelectorAll('a[href^="{{DATA:SCREEN:"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = link.getAttribute('href');
+                    document.body.style.opacity = '0';
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                });
+            });
+        });
+    </script>
+</body></html>

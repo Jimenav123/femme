@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#faf9f7",
+                    "on-primary-fixed-variant": "#4a4642",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e3e2e0",
+                    "on-secondary-fixed": "#3e0400",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#721c0c",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ccc5bf",
+                    "primary-fixed": "#e8e1db",
+                    "surface-container-low": "#f4f3f1",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1a1c1b",
+                    "tertiary-fixed-dim": "#c9c6c1",
+                    "on-primary-fixed": "#1e1b17",
+                    "background": "#faf9f7",
+                    "tertiary-container": "#2b2a27",
+                    "surface-dim": "#dadad8",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#e6e2dd",
+                    "on-background": "#1a1c1b",
+                    "surface-container": "#efeeec",
+                    "on-tertiary-container": "#93918d",
+                    "surface": "#faf9f7",
+                    "on-surface-variant": "#4b463f",
+                    "secondary": "#a13e2b",
+                    "outline-variant": "#cdc5bc",
+                    "primary": "#181612",
+                    "secondary-container": "#fc836a",
+                    "on-secondary-fixed-variant": "#812716",
+                    "on-primary-container": "#96918b",
+                    "outline": "#7c766e",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#ccc5bf",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "surface-container-highest": "#e3e2e0",
+                    "on-tertiary-fixed-variant": "#484743",
+                    "tertiary": "#161613",
+                    "primary-container": "#2d2a26",
+                    "secondary-fixed": "#ffdad3",
+                    "secondary-fixed-dim": "#ffb4a5",
+                    "inverse-surface": "#2f3130",
+                    "inverse-on-surface": "#f1f1ef",
+                    "surface-tint": "#625e59",
+                    "surface-container-high": "#e9e8e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-desktop": "48px",
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Libre Caslon Text"],
+                    "headline-lg": ["Libre Caslon Text"],
+                    "body-lg": ["DM Sans"],
+                    "label-sm": ["DM Sans"],
+                    "headline-md": ["Libre Caslon Text"],
+                    "headline-lg-mobile": ["Libre Caslon Text"],
+                    "body-md": ["DM Sans"],
+                    "label-md": ["DM Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 16px;
+            grid-auto-flow: dense;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .cycle-ring-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+        .cycle-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @media (max-width: 768px) {
+            .masonry-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky z-50 bg-background">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">waves</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary uppercase tracking-widest">FĒMME</h1>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 mb-32">
+<!-- Page Title & Editorial Intro -->
+<section class="mb-12">
+<p class="font-label-sm text-label-sm text-secondary uppercase mb-2 tracking-widest">Ritual Awareness</p>
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg mb-6">10. Cycle Map</h2>
+<div class="h-[1px] bg-surface-container-high w-full mb-8"></div>
+</section>
+<!-- Main Content: Cycle Visualization & Details -->
+<div class="flex flex-col lg:flex-row gap-12 items-start">
+<!-- Left: The Visual Map -->
+<div class="w-full lg:w-1/2 flex flex-col items-center">
+<div class="cycle-ring-container mb-12">
+<!-- Circular Visualization (Simulated via SVG) -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#efeeec" stroke-width="0.5"></circle>
+<!-- Menstrual (Days 1-5) -->
+<path d="M 95 50 A 45 45 0 0 1 86.4 76.4" fill="none" stroke="#a13e2b" stroke-linecap="round" stroke-width="4"></path>
+<!-- Follicular (Days 6-12) -->
+<path d="M 86.4 76.4 A 45 45 0 0 1 50 95" fill="none" stroke="#e8e1db" stroke-linecap="round" stroke-width="4"></path>
+<!-- Ovulatory (Days 13-17) -->
+<path d="M 50 95 A 45 45 0 0 1 13.6 76.4" fill="none" stroke="#ccc5bf" stroke-linecap="round" stroke-width="4"></path>
+<!-- Luteal (Days 18-28) -->
+<path d="M 13.6 76.4 A 45 45 0 0 1 95 50" fill="none" stroke="#2d2a26" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<!-- Center Identity -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-tighter">Day</p>
+<p class="font-display-lg text-headline-lg leading-none">14</p>
+<p class="font-label-md text-label-md text-secondary mt-1">Ovulatory</p>
+</div>
+<!-- Current Indicator Dot -->
+<div class="cycle-dot bg-on-background ring-4 ring-background" style="top: 95%; left: 50%;"></div>
+</div>
+<!-- Phase Legend -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+<div class="flex flex-col items-center text-center p-4 bg-surface-container rounded-lg">
+<div class="w-3 h-3 rounded-full bg-secondary mb-2"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Menstrual</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 bg-surface-container rounded-lg">
+<div class="w-3 h-3 rounded-full bg-primary-fixed mb-2"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Follicular</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 bg-surface-container-high rounded-lg ring-1 ring-outline-variant">
+<div class="w-3 h-3 rounded-full bg-primary-fixed-dim mb-2"></div>
+<span class="font-label-sm text-label-sm text-on-surface">Ovulatory</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 bg-surface-container rounded-lg">
+<div class="w-3 h-3 rounded-full bg-primary-container mb-2"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Luteal</span>
+</div>
+</div>
+</div>
+<!-- Right: Contextual Insights -->
+<div class="w-full lg:w-1/2 space-y-8">
+<div class="bg-surface-container rounded-lg p-8">
+<h3 class="font-headline-md text-headline-md mb-4 italic">The Peak of Vitality</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+                        You are currently in your <span class="text-primary font-bold">Ovulatory Phase</span>. Estrogen and testosterone peak today, driving a surge in energy, communication skills, and social confidence. This is the optimal window for creative collaboration and high-intensity movement.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-background rounded-full font-label-sm text-label-sm">High Energy</span>
+<span class="px-4 py-1.5 bg-background rounded-full font-label-sm text-label-sm">Social Magnetism</span>
+<span class="px-4 py-1.5 bg-background rounded-full font-label-sm text-label-sm">Glow State</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Recommendation Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene woman practicing yoga in a sun-drenched minimalist studio. The lighting is warm and golden, reflecting an ovulatory phase energy. The walls are a soft cream color, and the aesthetic is clean, luxury editorial with high-end textures and a peaceful, vibrant mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ06YPojZO2Qua2ANIcaofs2I2CS0rUHOoo4jgkwEf5-igBNvX28xho3ZXpn098GRQRucNwrNbUepH_u1InWYH6eMHhZx7EpN5VeMBUygp7P4cwfw6sMkJorn-1VO8CST32-e96e6d6LZft1HGJAO3nkrsWYmv8-5jJ2VV6539X2UmZYeSaENDRDqIQhmah1vf_Kwrbj4ulujBUOHrOUbOoKWGZ6LJn--phjdJibm7fht0oDfL120LlPpyR9TaS9oeUXKwPPiQAhQ5"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary uppercase mb-1">Movement</p>
+<h4 class="font-headline-md text-headline-md">Dynamic Flow Ritual</h4>
+</div>
+<!-- Recommendation Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully composed flat lay of seasonal fresh greens, citrus fruits, and vibrant berries on a textured stone surface. The lighting is bright and natural, suggesting freshness and vitality. The color palette features deep greens, bright yellows, and rich reds, maintaining a high-end wellness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbE03rfFw6qGUq73LUracZNM_yu66-3y4RWIh-k7cLC3z6CrNjveJRbJ0_aquc4RsPCT9BbeUrWk4gJ-4BWtPMe92uENGMCR9ZMAd0LhiOYduAADANiUxrYVfXi9wQtCPX-iFvv4paM0llM6bEmQVwbuphoEzhQSCB7S5jJY25IdWJSuaZxchT0AuGQikFT70o4_RJ5peNYXhzwRIqSZBIb7E31XPq2k-G0HQXTpliqk9ONVoyQifVHFTRfWIRlpTjxxVZbgzIsCf8"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary uppercase mb-1">Nourishment</p>
+<h4 class="font-headline-md text-headline-md">Metabolic Support</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Weekly Calendar Strip (Editorial View) -->
+<section class="mt-20">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md">Calendar View</h3>
+<p class="font-body-md text-body-md text-outline">March 2024</p>
+</div>
+<button class="bg-primary text-background px-6 py-2 rounded-full font-label-md text-label-md hover:opacity-90 transition-opacity">View Full Month</button>
+</div>
+<div class="grid grid-cols-7 gap-4">
+<!-- Mon -->
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-lg opacity-60">
+<span class="font-label-sm text-label-sm mb-2">MON</span>
+<span class="font-headline-md text-headline-md">11</span>
+</div>
+<!-- Tue -->
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-lg opacity-60">
+<span class="font-label-sm text-label-sm mb-2">TUE</span>
+<span class="font-headline-md text-headline-md">12</span>
+</div>
+<!-- Wed -->
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-lg opacity-80">
+<span class="font-label-sm text-label-sm mb-2">WED</span>
+<span class="font-headline-md text-headline-md">13</span>
+</div>
+<!-- Thu (Active Today) -->
+<div class="flex flex-col items-center p-4 bg-primary-container text-background rounded-lg scale-105 ring-2 ring-primary">
+<span class="font-label-sm text-label-sm mb-2">THU</span>
+<span class="font-headline-md text-headline-md">14</span>
+<div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+</div>
+<!-- Fri -->
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm mb-2">FRI</span>
+<span class="font-headline-md text-headline-md">15</span>
+</div>
+<!-- Sat -->
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm mb-2">SAT</span>
+<span class="font-headline-md text-headline-md">16</span>
+</div>
+<!-- Sun -->
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm mb-2">SUN</span>
+<span class="font-headline-md text-headline-md">17</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4">
+<div class="bg-surface-container-low/90 backdrop-blur-md w-[90%] md:w-auto md:min-w-[400px] flex justify-between items-center px-6 py-2 rounded-full">
+<!-- The Briefing -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-sm text-[10px] uppercase">The Briefing</span>
+</button>
+<!-- Today -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-label-sm text-[10px] uppercase">Today</span>
+</button>
+<!-- Rituals (Active Map is here) -->
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-6 py-2 scale-105 transition-all duration-300">
+<span class="material-symbols-outlined mb-1">self_care</span>
+<span class="font-label-sm text-[10px] uppercase">Rituals</span>
+</button>
+<!-- Progress -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined mb-1">analytics</span>
+<span class="font-label-sm text-[10px] uppercase">Progress</span>
+</button>
+</div>
+</nav>
+<script>
+        // Micro-interactions for the cycle map
+        document.addEventListener('DOMContentLoaded', () => {
+            const cycleDots = document.querySelectorAll('.cycle-dot');
+            // Subtle pulse effect for the current day indicator
+            setInterval(() => {
+                cycleDots.forEach(dot => {
+                    dot.style.transform = 'translate(-50%, -50%) scale(1.1)';
+                    setTimeout(() => {
+                        dot.style.transform = 'translate(-50%, -50%) scale(1)';
+                    }, 500);
+                });
+            }, 2000);
+        });
+    </script>
+</body></html>

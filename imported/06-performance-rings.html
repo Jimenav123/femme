@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>6. Performance Rings - FĒMME</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2D2A26", // Charcoal
+                        "secondary": "#C85B45", // Terracotta
+                        "tertiary": "#A3A3A3", // Muted Gray
+                        "background": "#FAF9F7", // Warm Cream
+                        "surface": "#FFFFFF",
+                        "on-surface": "#1A1C1B",
+                        "on-surface-variant": "#4B463F",
+                    },
+                    fontFamily: {
+                        "headline": ["Lora", "serif"],
+                        "sans": ["Outfit", "sans-serif"],
+                        "label": ["Outfit", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "card": "32px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #FAF9F7;
+            color: #1A1C1B;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .font-headline {
+            font-family: 'Lora', serif;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .ring-path {
+            transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center justify-start overflow-x-hidden">
+<div class="w-full max-w-md min-h-screen bg-background relative flex flex-col">
+<!-- TopAppBar (Matched to SCREEN_76) -->
+<header class="w-full sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">waves</span>
+</div>
+<h1 class="font-headline text-xl font-bold uppercase tracking-[0.2em] text-primary">FĒMME</h1>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Screen Title -->
+<div class="px-6 pt-6 pb-2">
+<div class="flex items-center justify-between">
+<h2 class="font-headline text-3xl font-medium tracking-tight">Performance Rings</h2>
+<span class="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary bg-secondary/5 px-3 py-1.5 rounded-full border border-secondary/10">Luteal • Day 21</span>
+</div>
+</div>
+<!-- Calendar -->
+<section class="w-full px-6 py-4">
+<div class="flex justify-between items-center bg-white/50 rounded-2xl p-4">
+<!-- Day 19 -->
+<div class="flex flex-col items-center gap-1 opacity-30">
+<span class="text-[10px] font-bold uppercase tracking-wider">S</span>
+<span class="text-lg font-medium">19</span>
+</div>
+<!-- Day 20 -->
+<div class="flex flex-col items-center gap-1 opacity-30">
+<span class="text-[10px] font-bold uppercase tracking-wider">M</span>
+<span class="text-lg font-medium">20</span>
+</div>
+<!-- Day 21 (Active) -->
+<div class="flex flex-col items-center gap-1 relative">
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">T</span>
+<span class="text-lg font-bold text-primary">21</span>
+<div class="absolute -bottom-1 w-1 h-1 rounded-full bg-secondary"></div>
+</div>
+<!-- Day 22 -->
+<div class="flex flex-col items-center gap-1 opacity-30">
+<span class="text-[10px] font-bold uppercase tracking-wider">W</span>
+<span class="text-lg font-medium">22</span>
+</div>
+<!-- Day 23 -->
+<div class="flex flex-col items-center gap-1 opacity-30">
+<span class="text-[10px] font-bold uppercase tracking-wider">T</span>
+<span class="text-lg font-medium">23</span>
+</div>
+</div>
+</section>
+<!-- Concentric Rings -->
+<section class="flex-1 flex flex-col items-center justify-center w-full px-6 py-8">
+<div class="relative w-72 h-72 flex items-center justify-center">
+<svg class="-rotate-90 w-full h-full" viewbox="0 0 256 256">
+<!-- Recovery (Inner) r: 70 -->
+<circle cx="128" cy="128" fill="none" r="70" stroke="#E5E7EB" stroke-width="8"></circle>
+<circle class="ring-path" cx="128" cy="128" fill="none" id="ring-recovery" r="70" stroke="#A3A3A3" stroke-dasharray="439.8" stroke-dashoffset="96.7" stroke-linecap="round" stroke-width="8"></circle>
+<!-- Training (Middle) r: 90 -->
+<circle cx="128" cy="128" fill="none" r="90" stroke="#E5E7EB" stroke-width="8"></circle>
+<circle class="ring-path" cx="128" cy="128" fill="none" id="ring-training" r="90" stroke="#C85B45" stroke-dasharray="565.5" stroke-dashoffset="45.2" stroke-linecap="round" stroke-width="8"></circle>
+<!-- Nutrition (Outer) r: 110 -->
+<circle cx="128" cy="128" fill="none" r="110" stroke="#E5E7EB" stroke-width="8"></circle>
+<circle class="ring-path" cx="128" cy="128" fill="none" id="ring-nutrition" r="110" stroke="#2D2A26" stroke-dasharray="691.1" stroke-dashoffset="103.6" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-headline text-6xl font-medium" id="center-score">85</span>
+<span class="text-[11px] text-on-surface-variant font-bold uppercase tracking-[0.2em] mt-1">Daily Score</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="flex items-center justify-center gap-6 mt-10">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Nutrition</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Training</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Recovery</span>
+</div>
+</div>
+</section>
+<!-- Metric Cards Grid -->
+<section class="w-full px-6 pb-32 grid grid-cols-2 gap-4">
+<!-- Recovery -->
+<div class="bg-surface rounded-card p-6 flex flex-col justify-between h-40 shadow-sm">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Recovery Score</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-medium" id="metric-recovery">78</span>
+<span class="text-lg text-on-surface-variant">%</span>
+</div>
+<div class="w-full bg-background h-1 rounded-full mt-2">
+<div class="bg-tertiary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- Training -->
+<div class="bg-surface rounded-card p-6 flex flex-col justify-between h-40 shadow-sm">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Training Load</span>
+<div class="flex items-baseline">
+<span class="font-headline text-2xl font-medium text-secondary" id="metric-training">Optimal</span>
+</div>
+<div class="w-full bg-background h-1 rounded-full mt-2">
+<div class="bg-secondary h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- Nutrition -->
+<div class="bg-surface rounded-card p-6 flex flex-col justify-between h-40 shadow-sm">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Nutrition</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-medium" id="metric-nutrition">85</span>
+<span class="text-lg text-on-surface-variant">%</span>
+</div>
+<div class="w-full bg-background h-1 rounded-full mt-2">
+<div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<!-- Streak -->
+<div class="bg-surface rounded-card p-6 flex flex-col justify-between h-40 shadow-sm">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Streak</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-4xl font-medium">4</span>
+<span class="text-sm font-medium text-on-surface-variant uppercase tracking-wider">days</span>
+</div>
+<div class="flex gap-1 mt-2">
+<div class="w-full bg-secondary h-1 rounded-full"></div>
+<div class="w-full bg-secondary h-1 rounded-full"></div>
+<div class="w-full bg-secondary h-1 rounded-full"></div>
+<div class="w-full bg-secondary h-1 rounded-full"></div>
+<div class="w-full bg-background h-1 rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Bottom Nav (Matched to SCREEN_76) -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4">
+<div class="bg-white/90 backdrop-blur-md rounded-full w-[92%] max-w-md flex justify-between items-center p-2 shadow-lg border border-black/5">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-0.5" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="text-[9px] font-bold uppercase tracking-tighter">The Briefing</span>
+</a>
+<!-- Insights (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary text-white rounded-full px-6 py-2 transition-all duration-300 ease-out active:scale-95" href="#">
+<span class="material-symbols-outlined mb-0.5" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="text-[9px] font-bold uppercase tracking-tighter">Insights</span>
+</a>
+<!-- Rituals -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-0.5" style="font-variation-settings: 'FILL' 0;">self_care</span>
+<span class="text-[9px] font-bold uppercase tracking-tighter">Rituals</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-0.5" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="text-[9px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+<script>
+        const CIRC_RECOVERY = 439.8;
+        const CIRC_TRAINING = 565.5;
+        const CIRC_NUTRITION = 691.1;
+
+        function updateRings(nutritionPct, trainingPct, recoveryPct) {
+            const nutritionOffset = CIRC_NUTRITION - (nutritionPct / 100) * CIRC_NUTRITION;
+            const trainingOffset = CIRC_TRAINING - (trainingPct / 100) * CIRC_TRAINING;
+            const recoveryOffset = CIRC_RECOVERY - (recoveryPct / 100) * CIRC_RECOVERY;
+
+            document.getElementById('ring-nutrition').style.strokeDashoffset = nutritionOffset;
+            document.getElementById('ring-training').style.strokeDashoffset = trainingOffset;
+            document.getElementById('ring-recovery').style.strokeDashoffset = recoveryOffset;
+
+            document.getElementById('metric-nutrition').innerText = nutritionPct;
+            document.getElementById('metric-recovery').innerText = recoveryPct;
+            
+            let loadText = "Low";
+            if(trainingPct > 80) loadText = "Optimal";
+            else if(trainingPct > 50) loadText = "Moderate";
+            document.getElementById('metric-training').innerText = loadText;
+
+            const avg = Math.round((nutritionPct + trainingPct + recoveryPct) / 3);
+            document.getElementById('center-score').innerText = avg;
+        }
+
+        window.onload = () => {
+            setTimeout(() => updateRings(85, 92, 78), 100);
+        };
+    </script>
+</body></html>

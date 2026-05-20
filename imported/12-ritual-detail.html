@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>12. Ritual Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(26,28,27,0.4) 0%, rgba(26,28,27,0) 40%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#faf9f7",
+                        "on-primary-fixed-variant": "#4a4642",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e3e2e0",
+                        "on-secondary-fixed": "#3e0400",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#721c0c",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ccc5bf",
+                        "primary-fixed": "#e8e1db",
+                        "surface-container-low": "#f4f3f1",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1b",
+                        "tertiary-fixed-dim": "#c9c6c1",
+                        "on-primary-fixed": "#1e1b17",
+                        "background": "#faf9f7",
+                        "tertiary-container": "#2b2a27",
+                        "surface-dim": "#dadad8",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e6e2dd",
+                        "on-background": "#1a1c1b",
+                        "surface-container": "#efeeec",
+                        "on-tertiary-container": "#93918d",
+                        "surface": "#faf9f7",
+                        "on-surface-variant": "#4b463f",
+                        "secondary": "#a13e2b",
+                        "outline-variant": "#cdc5bc",
+                        "primary": "#181612",
+                        "secondary-container": "#fc836a",
+                        "on-secondary-fixed-variant": "#812716",
+                        "on-primary-container": "#96918b",
+                        "outline": "#7c766e",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ccc5bf",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-tertiary-fixed-variant": "#484743",
+                        "tertiary": "#161613",
+                        "primary-container": "#2d2a26",
+                        "secondary-fixed": "#ffdad3",
+                        "secondary-fixed-dim": "#ffb4a5",
+                        "inverse-surface": "#2f3130",
+                        "inverse-on-surface": "#f1f1ef",
+                        "surface-tint": "#625e59",
+                        "surface-container-high": "#e9e8e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-desktop": "48px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "body-lg": ["DM Sans"],
+                        "label-sm": ["DM Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["DM Sans"],
+                        "label-md": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background selection:bg-secondary/20 overflow-x-hidden">
+<!-- Top Navigation Bar (Mobile Focused Detail) -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-margin-mobile py-4 mix-blend-difference">
+<button class="text-white hover:opacity-70 transition-opacity active:scale-95 duration-200" onclick="history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="text-white hover:opacity-70 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</nav>
+<main class="relative min-h-screen">
+<!-- Hero Image Section -->
+<div class="fixed top-0 left-0 w-full h-[530px] z-0">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<img alt="Ritual Detail Hero" class="w-full h-full object-cover" data-alt="A high-fashion editorial fitness photograph of a woman in minimalist charcoal yoga attire, performing a graceful sun salutation in a sun-drenched, high-ceilinged concrete loft. The lighting is soft and cinematic, casting long, artistic shadows. The color palette is composed of warm earth tones, soft greys, and crisp whites, maintaining a premium gallery aesthetic. The mood is tranquil, focused, and deeply intentional, reflecting a high-end wellness journal style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCIxl6-KbUWfVfrSm45hd0wedTj_URUoKe3pNXMdVL3SoDDlbGm2WijEa6hqAc7JWVdq1srJ0nalSwrlHilkcYh7lRCDf5iUXpDItGhTof0HZ30cv5iZh11L6x9QpU2Hg4F2vx9JHGwz4t-8EcF7Jof4LFDTDTGayTg-jb0T67qc53YJTVJDN96got1UDiBxZGz5Qih66T0uws3UmxOjf_e2C1dfyRsfycruNI3VinCg-29Atqo7gQ76Wy5y33Sq_FZTlE-50jki2B"/>
+</div>
+<!-- Scrollable Content Sheet -->
+<div class="relative z-20 mt-[442px] min-h-screen bg-surface-container-lowest rounded-t-lg shadow-2xl pb-32">
+<!-- Sheet Header / Pull Handle -->
+<div class="flex justify-center py-4">
+<div class="w-12 h-1 bg-outline-variant/30 rounded-full"></div>
+</div>
+<article class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Meta Info -->
+<div class="flex flex-wrap items-center gap-4 mb-6">
+<span class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full font-label-sm text-label-sm uppercase">Strength &amp; Flow</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>45 MINUTES</span>
+</div>
+</div>
+<!-- Title & Description -->
+<header class="mb-12">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">The Morning Sculpt</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                        A deliberate sequence designed to awaken the core and lengthen the spine. This ritual combines traditional Pilates foundations with contemporary mobility flows.
+                    </p>
+</header>
+<!-- Steps List -->
+<section>
+<h2 class="font-label-md text-label-md uppercase tracking-widest text-outline mb-8">The Sequence</h2>
+<div class="space-y-0">
+<!-- Step 1 -->
+<div class="group flex items-start gap-8 py-8 border-t border-surface-container">
+<span class="font-display-lg text-headline-md text-outline-variant/50 group-hover:text-secondary transition-colors duration-300">01</span>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Grounding Breathwork</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Centering the mind through diaphragmatic breathing. Focus on expanding the ribcage horizontally.</p>
+<span class="font-label-sm text-label-sm text-secondary">5:00 MIN</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group flex items-start gap-8 py-8 border-t border-surface-container">
+<span class="font-display-lg text-headline-md text-outline-variant/50 group-hover:text-secondary transition-colors duration-300">02</span>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Dynamic Spinal Flow</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Rolling through cat-cow variations to create space between each vertebra.</p>
+<span class="font-label-sm text-label-sm text-secondary">10:00 MIN</span>
+</div>
+<div class="hidden md:block w-32 h-32 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Close-up detail of a yoga practitioner's hands on a natural cork mat. Soft, warm sunlight filters through a nearby window. The aesthetic is clean, minimal, and editorial, focusing on texture and form. The palette is neutral with highlights of warm wood and beige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfaH7UGBurXVvkJu-DGHXYfkoG6e22Yg8RInODoJ9Dp5GimJP7u1pgWmhTGHfLMyuA2mBAYUVoJCFJyiSwY05x_ole_YqRdswz46J7QMoD3QXE17gDwOvEbiafhLiw2AA_KSdMnYAf7fDtWF3E8oxfj__Q_ZIThfMX72bXWK9nhAoJfRSvX1Wr4JGKWkWujSRQqcothBkLSVP1aYdhmHZJ0Jk0pGurZ3us8J4HRyQpughIFecZGtJbuNqfiDxwLO_8xjlNvnDyKHZx"/>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group flex items-start gap-8 py-8 border-t border-surface-container">
+<span class="font-display-lg text-headline-md text-outline-variant/50 group-hover:text-secondary transition-colors duration-300">03</span>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Lateral Core Activation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Controlled side-plank transitions to ignite the obliques and stabilize the shoulder girdle.</p>
+<span class="font-label-sm text-label-sm text-secondary">15:00 MIN</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="group flex items-start gap-8 py-8 border-t border-surface-container border-b">
+<span class="font-display-lg text-headline-md text-outline-variant/50 group-hover:text-secondary transition-colors duration-300">04</span>
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Savasana Restorative</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Final integration of the movement. Allowing the body to absorb the work through total stillness.</p>
+<span class="font-label-sm text-label-sm text-secondary">15:00 MIN</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Equipment -->
+<section class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="bg-surface-container/50 p-6 rounded-lg text-center">
+<span class="material-symbols-outlined text-outline mb-2">grid_view</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Standard Mat</p>
+</div>
+<div class="bg-surface-container/50 p-6 rounded-lg text-center">
+<span class="material-symbols-outlined text-outline mb-2">fitness_center</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Yoga Block</p>
+</div>
+</section>
+</article>
+</div>
+</main>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-0 left-0 right-0 z-40 p-margin-mobile flex justify-center pointer-events-none">
+<div class="max-w-md w-full pointer-events-auto">
+<button class="w-full py-5 bg-secondary text-on-secondary rounded-full font-label-md text-label-md uppercase tracking-[0.2em] shadow-xl hover:bg-secondary/90 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group">
+                Mark Complete
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">done_all</span>
+</button>
+</div>
+</div>
+<!-- Script for Micro-interactions -->
+<script>
+        document.addEventListener('scroll', () => {
+            const sheet = document.querySelector('.rounded-t-lg');
+            const hero = document.querySelector('.fixed.top-0');
+            const nav = document.querySelector('nav');
+            const scroll = window.scrollY;
+            
+            // Subtle Parallax & Fade
+            if (scroll < 500) {
+                hero.style.transform = `translateY(${scroll * 0.4}px)`;
+                hero.style.opacity = 1 - (scroll / 500);
+            }
+
+            // Navbar behavior
+            if (scroll > 200) {
+                nav.classList.remove('mix-blend-difference');
+                nav.classList.add('bg-background/80', 'backdrop-blur-md', 'text-on-background');
+                nav.querySelectorAll('button').forEach(btn => btn.classList.replace('text-white', 'text-on-background'));
+            } else {
+                nav.classList.add('mix-blend-difference');
+                nav.classList.remove('bg-background/80', 'backdrop-blur-md', 'text-on-background');
+                nav.querySelectorAll('button').forEach(btn => btn.classList.replace('text-on-background', 'text-white'));
+            }
+        });
+
+        // Button Ripple Effect
+        const completeBtn = document.querySelector('button.bg-secondary');
+        completeBtn.addEventListener('click', function(e) {
+            this.classList.add('scale-90');
+            setTimeout(() => this.classList.remove('scale-90'), 200);
+            
+            // Interaction Feedback
+            const originalText = this.innerHTML;
+            this.innerHTML = '<span class="material-symbols-outlined animate-bounce">celebration</span> COMPLETED';
+            this.classList.replace('bg-secondary', 'bg-primary');
+            
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.classList.replace('bg-primary', 'bg-secondary');
+            }, 3000);
+        });
+    </script>
+</body></html>
