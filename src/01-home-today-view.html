@@ -42,7 +42,7 @@
 </div>
 <!-- Thumb Zone Primary Action -->
 <div class="mt-auto px-margin-mobile pb-24 w-full flex flex-col items-center">
-<button class="w-full py-5 bg-primary text-background rounded-full font-label-md text-label-md uppercase tracking-[0.2em] shadow-xl hover:bg-primary/90 transition-all active:scale-[0.98]" onclick="window.location.href='{{DATA:SCREEN:SCREEN_38}}'">
+<button type="button" class="w-full py-5 bg-primary text-background rounded-full font-label-md text-label-md uppercase tracking-[0.2em] shadow-xl hover:bg-primary/90 transition-all active:scale-[0.98]" onclick="window.location.href='05-ai-protocol.html'">
                     Generate Protocol
                 </button>
 <p class="mt-4 font-label-sm text-label-xs text-on-surface-variant/60 uppercase tracking-widest">Personalized for your peak state</p>
@@ -50,40 +50,7 @@
 </section>
 </main>
 <!-- Refined Bottom Nav Bar (Thumb Zone) -->
-<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4"><div class="bg-surface-container-low/90 dark:bg-surface-container-highest/90 backdrop-blur-md rounded-full w-[90%] flex justify-around items-center p-2"><a class="flex flex-col items-center justify-center bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-full px-6 py-2 transition-all active:scale-90" href="{{DATA:SCREEN:SCREEN_5}}"><span class="material-symbols-outlined">dashboard</span><span class="font-label-sm text-label-sm">The Briefing</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="{{DATA:SCREEN:SCREEN_53}}"><span class="material-symbols-outlined">auto_awesome</span><span class="font-label-sm text-label-sm">Today</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="{{DATA:SCREEN:SCREEN_46}}"><span class="material-symbols-outlined">self_care</span><span class="font-label-sm text-label-sm">Rituals</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="{{DATA:SCREEN:SCREEN_59}}"><span class="material-symbols-outlined">analytics</span><span class="font-label-sm text-label-sm">Progress</span></a></div></nav>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Subtle entry animations
-            const main = document.querySelector('main');
-            main.classList.add('opacity-0', 'translate-y-4');
-            setTimeout(() => {
-                main.classList.add('transition-all', 'duration-700', 'ease-out');
-                main.classList.remove('opacity-0', 'translate-y-4');
-            }, 100);
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-center items-center px-4"><div class="bg-surface-container-low/90 dark:bg-surface-container-highest/90 backdrop-blur-md rounded-full w-[90%] flex justify-around items-center p-2"><a class="flex flex-col items-center justify-center bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-full px-6 py-2 transition-all active:scale-90" href="01-home-today-view.html"><span class="material-symbols-outlined">dashboard</span><span class="font-label-sm text-label-sm">The Briefing</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="03-today-feed.html"><span class="material-symbols-outlined">auto_awesome</span><span class="font-label-sm text-label-sm">Today</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="04-my-plan-rituals.html"><span class="material-symbols-outlined">self_care</span><span class="font-label-sm text-label-sm">Rituals</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-2 hover:text-primary transition-colors active:scale-90" href="09-biomarker-trends.html"><span class="material-symbols-outlined">analytics</span><span class="font-label-sm text-label-sm">Progress</span></a></div></nav>
 
-            // Active button scale effect
-            const buttons = document.querySelectorAll('button, a');
-            buttons.forEach(btn => {
-                btn.addEventListener('touchstart', () => {
-                    btn.classList.add('scale-95');
-                });
-                btn.addEventListener('touchend', () => {
-                    btn.classList.remove('scale-95');
-                });
-            });
-
-            // Smooth cross-fade logic for links
-            document.querySelectorAll('a[href^="{{DATA:SCREEN:"]').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const target = link.getAttribute('href');
-                    document.body.style.opacity = '0';
-                    setTimeout(() => {
-                        window.location.href = target;
-                    }, 400);
-                });
-            });
-        });
-    </script>
 <script src="shared/animations.js"></script>
 </body></html>
