@@ -27,12 +27,12 @@
 <!-- Header Section -->
 <header class="mb-12">
 <p class="font-label-md text-label-md text-secondary uppercase mb-2">Metrics &amp; Insights</p>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">9. Biomarker Trends</h2>
+<h2 class="word-animate font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">9. Biomarker Trends</h2>
 </header>
 <!-- Metric Toggles (Horizontal Scroll) -->
-<section class="mb-8">
+<section class="observe-in mb-8">
 <div class="flex overflow-x-auto hide-scrollbar gap-3 pb-2">
-<button type="button" class="flex-none px-6 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-transform active:scale-95">HRV</button>
+<button type="button" class="btn-spring flex-none px-6 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-transform active:scale-95">HRV</button>
 <button type="button" class="flex-none px-6 py-3 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-all active:scale-95">RHR</button>
 <button type="button" class="flex-none px-6 py-3 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-all active:scale-95">Body Temp</button>
 <button type="button" class="flex-none px-6 py-3 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-all active:scale-95">Respiratory</button>
@@ -40,12 +40,12 @@
 </div>
 </section>
 <!-- Main Graph Card -->
-<section class="bg-surface-container-low rounded-lg p-6 md:p-10 relative overflow-hidden mb-12">
+<section class="observe-in bg-surface-container-low rounded-lg p-6 md:p-10 relative overflow-hidden mb-12">
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
 <div>
 <h3 class="font-headline-md text-headline-md text-primary mb-1">Heart Rate Variability</h3>
 <div class="flex items-center gap-2">
-<span class="font-display-lg text-display-md text-primary">64</span>
+<span class="observe-counter font-display-lg text-display-md text-primary">64</span>
 <span class="font-label-md text-label-md text-secondary">ms (Avg)</span>
 <div class="flex items-center text-secondary ml-2">
 <span class="material-symbols-outlined text-sm">trending_up</span>
@@ -105,22 +105,22 @@
 </div>
 </section>
 <!-- Editorial Insights (Masonry-like layout) -->
-<section class="editorial-grid">
+<section class="observe-in editorial-grid">
 <!-- Insight 1 -->
-<div class="bg-surface-container rounded-lg p-8 flex flex-col justify-between aspect-square group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="card-hover observe-in bg-surface-container rounded-lg p-8 flex flex-col justify-between aspect-square group cursor-pointer hover:bg-surface-container-high transition-colors" data-delay="1">
 <div>
 <span class="material-symbols-outlined text-secondary mb-4">lightbulb</span>
 <h4 class="font-headline-md text-headline-md text-primary mb-4">Correlation found: Caffeine intake &amp; HRV dips.</h4>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">During your Luteal phase, your body is more sensitive to stimulants. Consider a 2pm cutoff for espresso.</p>
 </div>
-<button type="button" class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center self-end group-hover:scale-110 transition-transform">
+<button type="button" class="btn-spring w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center self-end group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
 <!-- Insight 2 (Image Focused) -->
 <div class="bg-surface-container rounded-lg overflow-hidden group">
 <div class="relative h-64 w-full">
-<img class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" data-alt="A serene woman practicing yoga in a high-end minimalist sunlit studio. Soft morning light filters through sheer curtains, casting gentle shadows on a polished wood floor. The aesthetic is clean, warm, and gallery-like with a focus on breath and tranquility. The color palette is composed of soft creams, warm beiges, and subtle terracotta accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjdpvau7E9HIyYzUM1Fgs4TlRwGs6rm0dy7GurxIO5xt_xksn-wb0I9wztzgORqgDi2QDJ3aZFJGH88Y8gDlSNuv3JxAWJ9vPg6Xj55hNo1z_PuzA0I7UGn-srNwa1SO4nd70G_djjv1ioyvJzDBfH9GUX2G88PDvbrlOOXubY9fGoiz03INYCuSeAA06-YGWKaGU2cDPsQ8hrhbTA68xNtCbS7f95emUS8upG-gwsspHelZ6oGBfFOUWgsZyx30VlXb8vtSdTWzAO"/>
+<img class="observe-image w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" data-alt="A serene woman practicing yoga in a high-end minimalist sunlit studio. Soft morning light filters through sheer curtains, casting gentle shadows on a polished wood floor. The aesthetic is clean, warm, and gallery-like with a focus on breath and tranquility. The color palette is composed of soft creams, warm beiges, and subtle terracotta accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjdpvau7E9HIyYzUM1Fgs4TlRwGs6rm0dy7GurxIO5xt_xksn-wb0I9wztzgORqgDi2QDJ3aZFJGH88Y8gDlSNuv3JxAWJ9vPg6Xj55hNo1z_PuzA0I7UGn-srNwa1SO4nd70G_djjv1ioyvJzDBfH9GUX2G88PDvbrlOOXubY9fGoiz03INYCuSeAA06-YGWKaGU2cDPsQ8hrhbTA68xNtCbS7f95emUS8upG-gwsspHelZ6oGBfFOUWgsZyx30VlXb8vtSdTWzAO"/>
 <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end p-6">
 <span class="font-label-sm text-label-sm text-on-primary/80 uppercase mb-1">Recommended Activity</span>
 <h4 class="font-headline-md text-headline-md text-on-primary">Restorative Flow</h4>
@@ -133,7 +133,7 @@
 <!-- Insight 3 (Stat Card) -->
 <div class="bg-primary text-on-primary rounded-lg p-8 flex flex-col justify-center text-center">
 <span class="font-label-md text-label-md uppercase tracking-[0.2em] mb-4 opacity-70">Cycle Consistency</span>
-<span class="font-display-lg text-display-xl leading-none mb-4 italic">94%</span>
+<span class="observe-counter font-display-lg text-display-xl leading-none mb-4 italic">94%</span>
 <p class="font-body-md text-body-md opacity-80 max-w-[200px] mx-auto">Your biomarker synchronization is elite this month.</p>
 </div>
 </section>

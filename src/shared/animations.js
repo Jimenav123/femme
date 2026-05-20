@@ -85,6 +85,15 @@
         });
     }
 
+    /* ── Word-by-word headline animation on .word-animate ───────── */
+    document.querySelectorAll(".word-animate").forEach((el) => {
+        if (reduced) { el.style.opacity = "1"; return; }
+        const words = el.textContent.trim().split(/\s+/);
+        el.innerHTML = words
+            .map((w, i) => `<span class="w" style="--wd:${(i * 100) / 1000}s">${w}</span>`)
+            .join("");
+    });
+
     /* ── Page cross-fade on internal links ───────────────────────── */
     let transitioning = false;
     document.querySelectorAll("a[href]").forEach((a) => {

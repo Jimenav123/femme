@@ -28,7 +28,7 @@
 <div class="relative flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
 <div class="max-w-2xl">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block">Current Cycle Phase: Luteal</span>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-container">5. AI Protocol</h2>
+<h2 class="word-animate font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-container">5. AI Protocol</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-4 opacity-80 leading-relaxed">
                     Prioritize anti-inflammatory nutrients and steady-state movement to support progesterone production and metabolic shifts during this phase.
                 </p>
@@ -37,7 +37,7 @@
 <div class="md:absolute top-0 right-0 flex flex-col items-end">
 <div class="bg-surface-container-low rounded-full px-6 py-6 border border-outline-variant/30 flex items-center justify-center min-w-[120px] transition-all duration-500" id="completion-container">
 <div class="text-center">
-<span class="font-headline-md text-headline-md text-secondary block" id="completion-percentage">0%</span>
+<span class="observe-counter font-headline-md text-headline-md text-secondary block" id="completion-percentage">0%</span>
 <span class="font-label-sm text-label-sm text-outline uppercase">Complete</span>
 </div>
 </div>
@@ -46,7 +46,7 @@
 <!-- Protocol List Sections -->
 <div class="space-y-16">
 <!-- Section: Supplementation -->
-<section>
+<section class="observe-in">
 <div class="flex items-center gap-4 mb-8 border-b border-surface-container pb-4">
 <span class="material-symbols-outlined text-secondary" data-icon="pill">pill</span>
 <h3 class="font-headline-md text-headline-md text-primary">Supplementation</h3>
@@ -76,7 +76,7 @@
 </div>
 </section>
 <!-- Section: Movement -->
-<section>
+<section class="observe-in">
 <div class="flex items-center gap-4 mb-8 border-b border-surface-container pb-4">
 <span class="material-symbols-outlined text-secondary" data-icon="directions_run">directions_run</span>
 <h3 class="font-headline-md text-headline-md text-primary">Movement</h3>
@@ -99,7 +99,7 @@
 </div>
 </section>
 <!-- Section: Nutrition -->
-<section>
+<section class="observe-in">
 <div class="flex items-center gap-4 mb-8 border-b border-surface-container pb-4">
 <span class="material-symbols-outlined text-secondary" data-icon="restaurant">restaurant</span>
 <h3 class="font-headline-md text-headline-md text-primary">Nutrition</h3>
@@ -131,7 +131,7 @@
 </div>
 <!-- Atmospheric Image Context -->
 <div class="mt-24 rounded-lg overflow-hidden relative aspect-video md:aspect-[21/9]">
-<img alt="Zen space" class="w-full h-full object-cover" data-alt="A serene and minimalist interior space designed for wellness and contemplation. Large windows allow soft, diffused afternoon sunlight to pour across a clean, sand-toned floor. The color palette consists of warm neutrals, soft off-whites, and subtle terracotta accents. A single artisanal ceramic vase sits on a low platform, surrounded by a peaceful, high-end editorial atmosphere that evokes intentionality and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-P5WPPoA2Zy-Q4-Bm-vRoVWaHFuZ3Ju2VvhrRuAcecuXN575aYyh2zPHIo8HOSpGuDmArVTk8wNNUFJjZFY5kHwp3uYtk5R5g-FgYMja1KR5OrsDYMx4U4fmKIkdMnPQBze1TId-Wo4I9VzdSTrqrqXFmvHtICXnNEOG15c81uzRqCjQ2wq8HmpEnVuiI_V3mKFNIrbYkYTIoMCiIg5gEH0f_XccBvX1l_zLhgpqARA_qOSkrFHEPmgkDfpI9E7JcSPI9ikZ59hSl"/>
+<img alt="Zen space" class="observe-image w-full h-full object-cover" data-alt="A serene and minimalist interior space designed for wellness and contemplation. Large windows allow soft, diffused afternoon sunlight to pour across a clean, sand-toned floor. The color palette consists of warm neutrals, soft off-whites, and subtle terracotta accents. A single artisanal ceramic vase sits on a low platform, surrounded by a peaceful, high-end editorial atmosphere that evokes intentionality and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-P5WPPoA2Zy-Q4-Bm-vRoVWaHFuZ3Ju2VvhrRuAcecuXN575aYyh2zPHIo8HOSpGuDmArVTk8wNNUFJjZFY5kHwp3uYtk5R5g-FgYMja1KR5OrsDYMx4U4fmKIkdMnPQBze1TId-Wo4I9VzdSTrqrqXFmvHtICXnNEOG15c81uzRqCjQ2wq8HmpEnVuiI_V3mKFNIrbYkYTIoMCiIg5gEH0f_XccBvX1l_zLhgpqARA_qOSkrFHEPmgkDfpI9E7JcSPI9ikZ59hSl"/>
 <div class="absolute inset-0 bg-primary/10 flex items-center justify-center text-center p-8">
 <div class="max-w-md">
 <p class="font-headline-md text-headline-md text-on-primary">"The luteal phase is a time for interior focus and grounding."</p>
@@ -148,7 +148,7 @@
 <span class="font-label-sm text-label-sm">The Briefing</span>
 </button>
 <!-- Today (ACTIVE) -->
-<button type="button" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-6 py-2 active:scale-90 transition-all duration-300 ease-out">
+<button type="button" class="btn-spring flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-6 py-2 active:scale-90 transition-all duration-300 ease-out">
 <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
 <span class="font-label-sm text-label-sm">Today</span>
 </button>

@@ -123,6 +123,26 @@ body {
 .panel-enter { animation: panelIn  0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 .panel-exit  { animation: panelOut 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 
+/* ─── Word-by-word headline animation ─────────────────────────────────────── */
+
+.word-animate {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.1em;
+}
+.word-animate .w {
+    display: inline-block;
+    margin-right: 0.28em;
+    opacity: 0;
+    animation: wordIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: var(--wd, 0s);
+}
+@keyframes wordIn {
+    0%   { filter: blur(10px); opacity: 0;   transform: translateY(40px); }
+    50%  { filter: blur(4px);  opacity: 0.5; transform: translateY(-4px); }
+    100% { filter: blur(0px);  opacity: 1;   transform: translateY(0); }
+}
+
 /* ─── Reduced motion ───────────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
@@ -133,6 +153,12 @@ body {
     }
     .animate-in, .animate-image-in, .animate-line-reveal, .page-fade-in,
     .observe-in, .observe-image, .observe-line {
+        animation: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+    }
+    .word-animate .w {
         animation: none !important;
         opacity: 1 !important;
         filter: none !important;
